@@ -11,6 +11,15 @@ html:
   use_repository_button: true
   extra_navbar: "Tutorial de Estatística"
 
+exclude_patterns:
+  - _build
+  - .venv
+  - .git
+  - .github
+  - requirements.txt
+  - _config_local.yml
+  - README.md
+
 repository:
   url: https://github.com/berlotto/statistics-tutorial
   path_to_book: "."

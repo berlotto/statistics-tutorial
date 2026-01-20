@@ -1,0 +1,32 @@
+# Intepretador Python e Artefatos
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Jupyter Book Build Output
+_build/
+
+# Ambientes Virtuais
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Configurações Locais
+_config_local.yml
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# OS Files
+.DS_Store
+Thumbs.db
