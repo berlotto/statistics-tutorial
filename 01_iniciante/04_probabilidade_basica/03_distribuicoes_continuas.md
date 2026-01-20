@@ -20,6 +20,17 @@ kernelspec:
 
 ---
 
+## Tabela de Decisão: Fenômenos Reais
+
+| Distribuição | O que ela modela? | Exemplos do Mundo Real |
+| :--- | :--- | :--- |
+| **Normal (Gaussiana)** | Soma de muitos pequenos efeitos independentes | Altura, Erros de medição, Notas em provas padronizadas. |
+| **Log-Normal** | Multiplicação de efeitos positivos (assimétrica) | Renda, Preços de Imóveis, Tamanho de cidades. |
+| **Exponencial** | Tempo até o próximo evento (sem memória) | Tempo de vida de um átomo, Tempo entre chegadas de ônibus. |
+| **T-Student** | Médias de amostras pequenas | Experimentos médicos com n=10, Testes A/B iniciais. |
+
+---
+
 ## 1. Distribuição Normal (Gaussiana)
 É simétrica, unimodal e definida apenas por dois parâmetros: Média ($\mu$) e Desvio Padrão ($\sigma$).
 
@@ -45,7 +56,14 @@ Criada por William Gosset (que trabalhava na cervejaria Guinness e usava o pseud
 
 ---
 
-## 3. Prática em Python: Normal vs T-Student
+## 3. Distribuição Exponencial (O Tempo de Espera)
+Enquanto a Poisson conta *quantos* eventos ocorrem, a Exponencial mede *quanto tempo* passa entre eles.
+*   **Propriedade "Sem Memória":** O fato de você estar esperando o ônibus há 30 min não aumenta a chance dele chegar agora (se a chegada for puramente aleatória/poissoniana).
+*   **Aplicações:** Análise de Sobrevivência (tempo até falha de máquina), Tempo de permanência em site.
+
+---
+
+## 4. Prática em Python: Normal vs T-Student
 
 ```python
 import numpy as np

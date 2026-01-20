@@ -95,7 +95,12 @@ for i, n in enumerate(tamanhos_amostra):
     sem_teorico = sd_pop / np.sqrt(n)
     sem_empirico = np.std(medias_amostrais)
     
-    ax[i+1].set_title(f"Médias com n={n}\nSEM esperado: {sem_teorico:.2f}")
+    # Teste de Normalidade (Shapiro-Wilk)
+    # Se p > 0.05, não rejeitamos a normalidade (é normal)
+    _, p_shapiro = stats.shapiro(medias_amostrais)
+    status = "Normal" if p_shapiro > 0.05 else "Não-Normal"
+    
+    ax[i+1].set_title(f"n={n} ({status})\nShapiro p={p_shapiro:.3f}")
 
 plt.tight_layout()
 # plt.show()

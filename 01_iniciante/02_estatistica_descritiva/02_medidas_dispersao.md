@@ -25,10 +25,18 @@ kernelspec:
 $$ Amplitude = Max - Min $$
 *   **Problema:** Depende apenas dos dois extremos. Um único erro de digitação (1000 em vez de 10) explode a amplitude.
 
-## 2. Intervalo Interquartil (IQR)
+## 2. Intervalo Interquartil (IQR) e Percentis
 A amplitude "focada no centro". É a diferença entre o 3º Quartil ($Q3$, 75%) e o 1º Quartil ($Q1$, 25%).
 $$ IQR = Q3 - Q1 $$
 *   **Vantagem:** Ignora os 25% menores e os 25% maiores. É a medida de dispersão **robusta** (companheira da Mediana).
+
+### 2.1 Percentis no Mundo Real
+Percentis não são apenas abstrações, são a linguagem de SLAs e Pediatria:
+*   **SLA de Latência:** "99% das requisições devem retornar em < 200ms" ($P_{99} < 200$). A média pode ser 50ms, mas se o $P_{99}$ for 5s, o cliente reclama.
+*   **Curvas de Crescimento:** "Seu filho está no percentil 90 de altura". Significa que ele é mais alto que 90% das crianças da mesma idade.
+*   **Detecção de Outliers:** Regra de bolso do Boxplot:
+    *   Outlier Inferior < $Q1 - 1.5 \times IQR$
+    *   Outlier Superior > $Q3 + 1.5 \times IQR$
 
 ---
 
@@ -103,16 +111,26 @@ cv_B = (std_B / np.mean(servidor_B)) * 100
 print(f"\nCV A: {cv_A:.2f}%")
 print(f"CV B: {cv_B:.2f}%")
 
-# 4. IQR (Intervalo Interquartil)
+# 4. IQR (Intervalo Interquartil) e Detecção de Outliers
 # Usamos o percentil 75 e 25
 q3_B, q1_B = np.percentile(servidor_B, [75, 25])
 iqr_B = q3_B - q1_B
-print(f"\nIQR B: {iqr_B:.2f}")
+limite_superior = q3_B + 1.5 * iqr_B
 
-# --- Regra Prática para o Pesquisador ---
-# Se CV > 30% ou 40%, considere os dados como "altamente dispersos".
-# A média pode não ser confiável.
+print(f"\nIQR B: {iqr_B:.2f}")
+print(f"Outliers acima de: {limite_superior:.2f}")
+
+# Visualização Simples (Boxplot)
+# Para visualização interativa, veja o capítulo de Visualização de Dados
+import matplotlib.pyplot as plt
+plt.boxplot([servidor_A, servidor_B], labels=['A (Estável)', 'B (Instável)'])
+plt.title("Comparação de Variabilidade")
+plt.ylabel("Tempo (ms)")
+# plt.show()
 ```
+
+### O Poder da Visualização Interativa
+Em análises modernas, preferimos boxplots que permitem explorar os dados. Imagine passar o mouse e ver exatamente qual ponto é o outlier. Isso é coberto no capítulo de **Visualização Interativa**.
 
 ### Resumo para o Pesquisador Sênior
 *   Sempre especifique se está usando desvio padrão amostral ou populacional em relatórios técnicos.

@@ -10,6 +10,9 @@ parts:
     - file: 01_iniciante/02_estatistica_descritiva/02_medidas_dispersao
     - file: 01_iniciante/03_visualizacao_dados/01_distribuicao_frequencia
     - file: 01_iniciante/03_visualizacao_dados/02_boxplot_outliers
+    - file: 01_iniciante/03_visualizacao_dados/03_escolha_graficos
+    - file: 01_iniciante/03_visualizacao_dados/04_visualizacao_interativa
+    - file: 01_iniciante/03_visualizacao_dados/05_storytelling_dados
     - file: 01_iniciante/04_probabilidade_basica/01_conceitos_probabilidade
     - file: 01_iniciante/04_probabilidade_basica/02_distribuicoes_discretas
     - file: 01_iniciante/04_probabilidade_basica/03_distribuicoes_continuas
@@ -18,12 +21,14 @@ parts:
     chapters:
     - file: 02_intermediario/05_teorema_limite_central/01_distribuicao_amostral
     - file: 02_intermediario/05_teorema_limite_central/02_intervalos_confianca
+    - file: 02_intermediario/06_validacao_premissas/00_fundamentos_testes
     - file: 02_intermediario/06_validacao_premissas/01_testes_normalidade
     - file: 02_intermediario/06_validacao_premissas/02_homocedasticidade
     - file: 02_intermediario/07_comparacao_grupos/01_teste_t_mann_whitney
     - file: 02_intermediario/07_comparacao_grupos/02_anova_kruskal
     - file: 02_intermediario/08_poder_amostra/01_calculo_amostral
     - file: 02_intermediario/08_poder_amostra/02_poder_teste
+    - file: 02_intermediario/08_poder_amostra/03_effect_size_significancia_pratica
     - file: 02_intermediario/09_associacao_correlacao/01_correlacao
     - file: 02_intermediario/09_associacao_correlacao/02_chi_quadrado
     - file: 02_intermediario/09_associacao_correlacao/03_correlacao_parcial
@@ -50,3 +55,5 @@ parts:
     - file: 05_topicos_especiais/18_multivariada_nao_supervisionada/01_pca_clustering
     - file: 05_topicos_especiais/19_meta_analise/01_introducao_meta_analise
     - file: 05_topicos_especiais/20_reporte_cientifico/01_escrita_resultados
+    - file: 05_topicos_especiais/21_etica_dados/01_bias_transparencia
+    - file: 05_topicos_especiais/22_estatistica_bayesiana/01_introducao_bayesiana

@@ -79,18 +79,47 @@ plt.xticks([0, 1], ['Dieta (A)', 'Placebo (B)'])
 plt.title('Perda de Peso por Grupo')
 # plt.show()
 
-# 2. Teste T Independente
-# Assumindo variâncias iguais (se dúvida, use equal_var=False)
-stat_t, p_t = stats.ttest_ind(grupo_A, grupo_B)
+# 2. Teste T (Paramétrico) com Rigor
+O código abaixo não apenas roda o teste, mas verifica as premissas antes. Isso é o que separa o amador do profissional.
 
-print(f"--- Teste T (Paramétrico) ---")
-print(f"Média A: {np.mean(grupo_A):.2f} | Média B: {np.mean(grupo_B):.2f}")
-print(f"P-valor: {p_t:.4f}")
+```python
+def t_test_robust(group1, group2):
+    # 1. Checar Normalidade (Shapiro-Wilk)
+    # H0: É normal. Se p < 0.05, rejeita (não é normal).
+    _, p_norm1 = stats.shapiro(group1)
+    _, p_norm2 = stats.shapiro(group2)
+    
+    # 2. Checar Variâncias Iguais (Levene)
+    # H0: Variâncias iguais. Se p < 0.05, rejeita (são diferentes).
+    _, p_levene = stats.levene(group1, group2)
+    
+    print(f"--- Diagnóstico de Premissas ---")
+    print(f"Normalidade G1 (p={p_norm1:.3f}) | G2 (p={p_norm2:.3f})")
+    print(f"Variâncias Iguais (p={p_levene:.3f})")
+    
+    if p_norm1 < 0.05 or p_norm2 < 0.05:
+        print("⚠️ ALERTA: Dados não-normais! Considere Mann-Whitney.")
+    
+    # 3. Rodar Teste T
+    # Se Levene rejeitou variâncias iguais, usamos equal_var=False (Welch's t-test)
+    equal_var = p_levene > 0.05
+    t_stat, p_val = stats.ttest_ind(group1, group2, equal_var=equal_var)
+    
+    tipo = "Student (Var Iguais)" if equal_var else "Welch (Var Diferentes)"
+    print(f"\n--- Resultado ({tipo}) ---")
+    print(f"Estatística t: {t_stat:.2f}")
+    print(f"P-valor: {p_val:.4f}")
+    
+    return p_val
 
-if p_t < 0.05:
+# Usando a função
+p_valor_final = t_test_robust(grupo_A, grupo_B)
+
+if p_valor_final < 0.05:
     print(">> Rejeitamos H0: A Dieta funciona!")
 else:
     print(">> Não rejeitamos H0: Sem evidência de diferença.")
+```
 
 # 3. Teste de Mann-Whitney (Plano B seguro)
 stat_u, p_u = stats.mannwhitneyu(grupo_A, grupo_B, alternative='two-sided')

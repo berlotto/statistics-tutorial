@@ -26,11 +26,21 @@ Apesar do nome "Variância", ela serve para comparar **Médias**.
 *   **Hipótese Alternativa ($H_1$):** Pelo menos uma média é diferente das outras. (Não diz qual!).
 
 ### A Lógica F (Ratio)
-A ANOVA compara:
-1.  **Variância ENTRE grupos:** A diferença dos Tratamentos. (Sinal).
-2.  **Variância DENTRO dos grupos:** O ruído aleatório. (Ruído).
+A ANOVA decompõe a variância total em:
+1.  **Variância ENTRE grupos (Between):** Explica o quanto os grupos são diferentes entre si (Sinal).
+2.  **Variância DENTRO dos grupos (Within):** Explica a variabilidade natural de cada indivíduo (Ruído).
+
 $$ F = \frac{\text{Variância ENTRE}}{\text{Variância DENTRO}} $$
-Se $F$ for grande, o Tratamento supera o ruído.
+
+Se $F$ for grande (ex: > 3 ou 4), o sinal supera o ruído.
+
+**Visualização do Conceito:**
+```python
+# Imagine 3 grupos
+# Cenário 1: Pouco Ruído (Dentro) -> Fácil ver diferença (Entre) -> F GIGANTE
+# Cenário 2: Muito Ruído (Dentro) -> Difícil ver diferença (Entre) -> F PEQUENO
+```
+Se a variância dentro dos grupos for enorme (dados muito espalhados), as médias podem até ser diferentes, mas a ANOVA dirá que não há significância estatística. Por isso, **reduzir o ruído experimental** aumenta seu F e seu Poder.
 
 ---
 
