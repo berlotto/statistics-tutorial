@@ -6,6 +6,7 @@ execute:
   timeout: 300
 
 html:
+  baseurl: "/statistics-tutorial/"
   use_issues_button: true
   use_repository_button: true
   extra_navbar: "Tutorial de Estatística"
