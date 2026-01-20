@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Boxplot, Outliers e Violin Plots
 
 > **"Valores discrepantes (outliers) não são erros necessariamente; às vezes são a descoberta do século."** — Fleming descobrindo a Penicilina (um fungo "intruso" na placa).

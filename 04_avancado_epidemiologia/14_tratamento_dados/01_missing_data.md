@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Missing Data: O Silêncio Também Fala
 
 > **"A ausência de evidência não é apenas um bug no banco de dados. É uma informação em si mesma."**

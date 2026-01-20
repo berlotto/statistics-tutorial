@@ -26,6 +26,7 @@ parts:
     - file: 02_intermediario/08_poder_amostra/02_poder_teste
     - file: 02_intermediario/09_associacao_correlacao/01_correlacao
     - file: 02_intermediario/09_associacao_correlacao/02_chi_quadrado
+    - file: 02_intermediario/09_associacao_correlacao/03_correlacao_parcial
 
   - caption: Nível 3 - Modelagem
     chapters:

@@ -1,4 +1,4 @@
-title: Estatística com Rigor e Python
+title: "Documentação de Estudos Aprofundados: Estatística"
 author: Sérgio Berlotto
 logo: ""  # Pode adicionar um logo depois
 execute:
@@ -19,6 +19,7 @@ exclude_patterns:
   - requirements.txt
   - _config_local.yml
   - README.md
+  - .agent
 
 repository:
   url: https://github.com/berlotto/statistics-tutorial

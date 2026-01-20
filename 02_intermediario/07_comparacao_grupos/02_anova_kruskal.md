@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Comparando 3+ Grupos: ANOVA e Kruskal-Wallis
 
 > **"Por que não rodar vários Testes T? Porque você vai cometer o Erro Tipo I."**

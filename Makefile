@@ -14,6 +14,13 @@ setup:
 build:
 	uv run jupyter-book build .
 
+buildpdf:
+	mkdir -p pdf
+	docker build -t jb-pdf .
+	docker run --rm -v $(shell pwd):/book jb-pdf jupyter-book build . --builder pdflatex
+	cp _build/latex/*.pdf pdf/
+	@echo "PDF gerado com sucesso em: pdf/"
+
 serve:
 	python -m http.server 8000 --directory _build/html
 
