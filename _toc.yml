@@ -1,0 +1,51 @@
+format: jb-book
+root: main-content
+parts:
+  - caption: Nível 1 - Fundamentos
+    chapters:
+    - file: 01_iniciante/01_fundamentos_amostragem/01_tipos_de_dados
+    - file: 01_iniciante/01_fundamentos_amostragem/02_tecnicas_amostragem
+    - file: 01_iniciante/01_fundamentos_amostragem/03_conceito_tamanho_amostral
+    - file: 01_iniciante/02_estatistica_descritiva/01_medidas_posicao
+    - file: 01_iniciante/02_estatistica_descritiva/02_medidas_dispersao
+    - file: 01_iniciante/03_visualizacao_dados/01_distribuicao_frequencia
+    - file: 01_iniciante/03_visualizacao_dados/02_boxplot_outliers
+    - file: 01_iniciante/04_probabilidade_basica/01_conceitos_probabilidade
+    - file: 01_iniciante/04_probabilidade_basica/02_distribuicoes_discretas
+    - file: 01_iniciante/04_probabilidade_basica/03_distribuicoes_continuas
+
+  - caption: Nível 2 - Intermediário
+    chapters:
+    - file: 02_intermediario/05_teorema_limite_central/01_distribuicao_amostral
+    - file: 02_intermediario/05_teorema_limite_central/02_intervalos_confianca
+    - file: 02_intermediario/06_validacao_premissas/01_testes_normalidade
+    - file: 02_intermediario/06_validacao_premissas/02_homocedasticidade
+    - file: 02_intermediario/07_comparacao_grupos/01_teste_t_mann_whitney
+    - file: 02_intermediario/07_comparacao_grupos/02_anova_kruskal
+    - file: 02_intermediario/08_poder_amostra/01_calculo_amostral
+    - file: 02_intermediario/08_poder_amostra/02_poder_teste
+    - file: 02_intermediario/09_associacao_correlacao/01_correlacao
+    - file: 02_intermediario/09_associacao_correlacao/02_chi_quadrado
+
+  - caption: Nível 3 - Modelagem
+    chapters:
+    - file: 03_modelagem/10_regressao_linear/01_regressao_simples
+    - file: 03_modelagem/10_regressao_linear/02_regressao_multipla_diagnostico
+    - file: 03_modelagem/11_regressao_logistica/01_logistica_binaria
+    - file: 03_modelagem/11_regressao_logistica/02_performance_classificacao
+    - file: 03_modelagem/12_modelos_generalizados_glm/01_poisson_binomial_negativa
+    - file: 03_modelagem/13_selecao_modelos/01_aic_bic_stepwise
+
+  - caption: Nível 4 - Epidemiologia Avançada
+    chapters:
+    - file: 04_avancado_epidemiologia/14_tratamento_dados/01_missing_data
+    - file: 04_avancado_epidemiologia/15_causalidade_dags/01_dags_inferencia_causal
+    - file: 04_avancado_epidemiologia/16_analise_sobrevivencia/01_kaplan_meier_logrank
+    - file: 04_avancado_epidemiologia/16_analise_sobrevivencia/02_cox_regression
+    - file: 04_avancado_epidemiologia/17_medidas_epidemiologicas/01_risco_odds_prevalencia
+
+  - caption: Nível 5 - Tópicos Especiais
+    chapters:
+    - file: 05_topicos_especiais/18_multivariada_nao_supervisionada/01_pca_clustering
+    - file: 05_topicos_especiais/19_meta_analise/01_introducao_meta_analise
+    - file: 05_topicos_especiais/20_reporte_cientifico/01_escrita_resultados

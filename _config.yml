@@ -1,0 +1,16 @@
+title: Estatística com Rigor e Python
+author: Sérgio Berlotto
+logo: ""  # Pode adicionar um logo depois
+execute:
+  execute_notebooks: auto  # Tenta executar se houver código (mas nossos .md são 'text-only' para o JB por padrão, a menos que convertamos)
+  timeout: 300
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+  extra_navbar: "Tutorial de Estatística"
+
+repository:
+  url: https://github.com/berlotto/statistics-tutorial
+  path_to_book: "."
+  branch: main
