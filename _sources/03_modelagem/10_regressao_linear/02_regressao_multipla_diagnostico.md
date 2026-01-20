@@ -97,24 +97,52 @@ print(vif_data)
 # Regra: VIF > 5 ou 10 é problema. Constante geralmente tem VIF alto (ignore).
 # Se 'xp' tivesse VIF=15, ela estaria brigando com outra variável.
 
-# 3. Análise de Resíduos (Diagnóstico Visual)
+# 3. Análise de Resíduos (Diagnóstico Visual Completo)
 residuos = modelo.resid
 preditos = modelo.predict(X)
+# Resíduos padronizados (para Scale-Location)
+residuos_std = modelo.get_influence().resid_studentized_internal
 
-fig, ax = plt.subplots(1, 2, figsize=(12, 5))
+fig, ax = plt.subplots(2, 2, figsize=(12, 10))
 
-# A: Resíduos vs Preditos (Checar Homocedasticidade/Linearidade)
-sns.scatterplot(x=preditos, y=residuos, ax=ax[0])
-ax[0].axhline(0, color='red', linestyle='--')
-ax[0].set_title('Resíduos vs Preditos (Ideal: Nuvem aleatória)')
-# Se formar um padrão (U ou Funil), tem problema.
+# A: Resíduos vs Preditos (Linearidade)
+sns.scatterplot(x=preditos, y=residuos, ax=ax[0, 0])
+ax[0, 0].axhline(0, color='red', linestyle='--')
+ax[0, 0].set_title('1. Linearidade\n(Ideal: Sem padrão curva)')
 
-# B: QQ Plot (Checar Normalidade dos Resíduos)
-sm.qqplot(residuos, line='45', fit=True, ax=ax[1])
-ax[1].set_title('QQ Plot dos Resíduos')
+# B: QQ Plot (Normalidade)
+sm.qqplot(residuos, line='45', fit=True, ax=ax[0, 1])
+ax[0, 1].set_title('2. Normalidade (QQ Plot)')
+
+# C: Scale-Location (Homocedasticidade)
+sns.scatterplot(x=preditos, y=np.sqrt(np.abs(residuos_std)), ax=ax[1, 0])
+ax[1, 0].set_title('3. Homocedasticidade\n(Ideal: Linha reta horizontal)')
+
+# D: Residuals vs Leverage (Influência)
+# Pontos extremos que puxam a reta
+sm.graphics.influence_plot(modelo, ax=ax[1, 1], criterion="cooks")
+ax[1, 1].set_title('4. Pontos Influentes (Leverage)')
 
 plt.tight_layout()
 # plt.show()
+```
+
+---
+
+## 4. O Que Fazer se os Diagnósticos Falharem? (Transformações)
+Se você ver uma curva no gráfico 1 ou um funil no gráfico 3, seu modelo está violando premissas. Tente transformar os dados:
+
+1.  **Log-Transformação ($log(y)$ ou $log(x)$):**
+    *   Cura: Heterocedasticidade (funil) e Assimetria forte.
+    *   Uso: Salários, Preços, População.
+2.  **Raiz Quadrada ($\sqrt{y}$):**
+    *   Cura: Dados de contagem (Poisson).
+    *   Uso: Contagem de bactérias, número de acessos.
+
+```python
+# Exemplo de Transformação Log
+df['log_salario'] = np.log(df['salario'])
+# Rodar modelo com log_salario em vez de salario...
 ```
 
 ### O $R^2$ Ajustado

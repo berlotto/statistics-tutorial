@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>A Arte de Escolher o Gráfico Correto &#8212; Documentação de Estudos Aprofundados: Estatística</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_iniciante/03_visualizacao_dados/03_escolha_graficos';</script>
+    <link rel="canonical" href="/statistics-tutorial/01_iniciante/03_visualizacao_dados/03_escolha_graficos.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Visualização Interativa (Plotly)" href="04_visualizacao_interativa.html" />
+    <link rel="prev" title="Boxplot, Outliers e Violin Plots" href="02_boxplot_outliers.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../main-content.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Documentação de Estudos Aprofundados: Estatística</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../main-content.html">
+                    Guia e Syllabus Master: Estatística e Epidemiologia com Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 1 - Fundamentos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_fundamentos_amostragem/01_tipos_de_dados.html">Tipos de Dados e Escalas de Mensuração</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_fundamentos_amostragem/02_tecnicas_amostragem.html">Técnicas de Amostragem e Viés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_fundamentos_amostragem/03_conceito_tamanho_amostral.html">Tamanho da Amostra: A Intuição Antes da Fórmula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_estatistica_descritiva/01_medidas_posicao.html">Medidas de Posição (Tendência Central)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_estatistica_descritiva/02_medidas_dispersao.html">Medidas de Dispersão (Variabilidade)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_distribuicao_frequencia.html">Distribuição de Frequência e Forma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_boxplot_outliers.html">Boxplot, Outliers e Violin Plots</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">A Arte de Escolher o Gráfico Correto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_visualizacao_interativa.html">Visualização Interativa (Plotly)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_storytelling_dados.html">Storytelling com Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_probabilidade_basica/01_conceitos_probabilidade.html">Conceitos de Probabilidade e Teorema de Bayes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_probabilidade_basica/02_distribuicoes_discretas.html">Distribuições Discretas (Contagens)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_probabilidade_basica/03_distribuicoes_continuas.html">Distribuições Contínuas (A Régua do Mundo)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 2 - Intermediário</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/05_teorema_limite_central/01_distribuicao_amostral.html">Teorema Central do Limite (TLC) e Distribuição Amostral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/05_teorema_limite_central/02_intervalos_confianca.html">Intervalos de Confiança (IC): A Margem de Erro Científica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/06_validacao_premissas/00_fundamentos_testes.html">Fundamentos de Testes de Hipótese</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/06_validacao_premissas/01_testes_normalidade.html">Validação de Premissas: Normalidade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/06_validacao_premissas/02_homocedasticidade.html">Validação de Premissas: Homocedasticidade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/07_comparacao_grupos/01_teste_t_mann_whitney.html">Comparação de 2 Grupos: Teste T e Seus Amigos</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/07_comparacao_grupos/02_anova_kruskal.html">Comparando 3+ Grupos: ANOVA e Kruskal-Wallis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/08_poder_amostra/01_calculo_amostral.html">Cálculo Amostral: Quantos Precisamos?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/08_poder_amostra/02_poder_teste.html">O Poder do Teste (Statistical Power)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/08_poder_amostra/03_effect_size_significancia_pratica.html">Effect Size e Significância Prática</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/09_associacao_correlacao/01_correlacao.html">Correlação: A Medida da Associação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/09_associacao_correlacao/02_chi_quadrado.html">Associação Categórica: Chi-Quadrado e Fisher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/09_associacao_correlacao/03_correlacao_parcial.html">Correlação Parcial: Controlando Confundidores</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 3 - Modelagem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../03_modelagem/10_regressao_linear/01_regressao_simples.html">Regressão Linear Simples: A Arte de Prever</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03_modelagem/10_regressao_linear/02_regressao_multipla_diagnostico.html">Regressão Múltipla e Diagnóstico: O Mundo Real</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03_modelagem/11_regressao_logistica/01_logistica_binaria.html">Regressão Logística: Prevendo o Sim/Não</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03_modelagem/11_regressao_logistica/02_performance_classificacao.html">Avaliando Classificadores: Acurácia não é tudo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03_modelagem/12_modelos_generalizados_glm/01_poisson_binomial_negativa.html">GLM: Poisson e Binomial Negativa (Dados de Contagem)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03_modelagem/13_selecao_modelos/01_aic_bic_stepwise.html">Seleção de Modelos: A Navalha de Occam</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 4 - Epidemiologia Avançada</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../04_avancado_epidemiologia/14_tratamento_dados/01_missing_data.html">Missing Data: O Silêncio Também Fala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../04_avancado_epidemiologia/15_causalidade_dags/01_dags_inferencia_causal.html">DAGs e Inferência Causal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../04_avancado_epidemiologia/16_analise_sobrevivencia/01_kaplan_meier_logrank.html">Análise de Sobrevivência: Kaplan-Meier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../04_avancado_epidemiologia/16_analise_sobrevivencia/02_cox_regression.html">Regressão de Cox: Sobrevivência Multivariada</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../04_avancado_epidemiologia/17_medidas_epidemiologicas/01_risco_odds_prevalencia.html">Medidas Epidemiológicas: O Idioma da Saúde</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 5 - Tópicos Especiais</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../05_topicos_especiais/18_multivariada_nao_supervisionada/01_pca_clustering.html">Multivariada Não-Supervisionada: PCA e Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05_topicos_especiais/19_meta_analise/01_introducao_meta_analise.html">Meta-Análise: A Ciência da Síntese</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05_topicos_especiais/20_reporte_cientifico/01_escrita_resultados.html">Reporte Científico: Escrevendo para Perdurar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05_topicos_especiais/21_etica_dados/01_bias_transparencia.html">Ética em Dados e Transparência</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05_topicos_especiais/22_estatistica_bayesiana/01_introducao_bayesiana.html">Introdução à Estatística Bayesiana</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/berlotto/statistics-tutorial" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/berlotto/statistics-tutorial/issues/new?title=Issue%20on%20page%20%2F01_iniciante/03_visualizacao_dados/03_escolha_graficos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/01_iniciante/03_visualizacao_dados/03_escolha_graficos.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A Arte de Escolher o Gráfico Correto</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-decisao">1. Matriz de Decisão</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-praticos">2. Exemplos Práticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma-vs-boxplot">2.1 Histograma vs Boxplot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barras-vs-pizza-o-odio-a-pizza">2.2 Barras vs Pizza (O ódio à Pizza)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot-o-detector-de-padroes">2.3 Scatter Plot: O Detector de Padrões</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-o-mesmo-dado-historias-diferentes">3. Prática: O Mesmo Dado, Histórias Diferentes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insights-deste-dashboard">Insights Deste Dashboard</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="a-arte-de-escolher-o-grafico-correto">
+<h1>A Arte de Escolher o Gráfico Correto<a class="headerlink" href="#a-arte-de-escolher-o-grafico-correto" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><strong>“O objetivo da visualização é o insight, não as figuras.”</strong> — Ben Shneiderman</p>
+</div></blockquote>
+<p>Um erro comum é escolher o gráfico “mais bonito” em vez do mais claro. A escolha do gráfico depende exclusivamente de duas coisas:</p>
+<ol class="arabic simple">
+<li><p><strong>O Tipo de Dados</strong> que você tem.</p></li>
+<li><p><strong>A Pergunta</strong> que você quer responder.</p></li>
+</ol>
+<hr class="docutils" />
+<section id="matriz-de-decisao">
+<h2>1. Matriz de Decisão<a class="headerlink" href="#matriz-de-decisao" title="Link to this heading">#</a></h2>
+<p>Como pesquisador, use esta tabela mental antes de abrir o Python/R:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Pergunta Principal</p></th>
+<th class="head text-left"><p>Tipo de Dados Envolvidos</p></th>
+<th class="head text-left"><p>Gráfico Recomendado</p></th>
+<th class="head text-left"><p>O que ele mostra?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Como é a distribuição?</strong></p></td>
+<td class="text-left"><p>1 Variável Numérica</p></td>
+<td class="text-left"><p><strong>Histograma</strong> ou <strong>Densidade (KDE)</strong></p></td>
+<td class="text-left"><p>Forma, simetria, bimodalidade.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Comparar distribuições?</strong></p></td>
+<td class="text-left"><p>1 Numérica + 1 Categórica</p></td>
+<td class="text-left"><p><strong>Box Plot</strong> ou <strong>Violin Plot</strong></p></td>
+<td class="text-left"><p>Onde está o centro, a dispersão e os outliers em cada grupo.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Há relação entre variáveis?</strong></p></td>
+<td class="text-left"><p>2 Variáveis Numéricas</p></td>
+<td class="text-left"><p><strong>Scatter Plot</strong> (Dispersão)</p></td>
+<td class="text-left"><p>Correlação (positiva/negativa), linearidade, clusters.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Como evolui no tempo?</strong></p></td>
+<td class="text-left"><p>Tempo + 1 Numérica</p></td>
+<td class="text-left"><p><strong>Line Chart</strong> (Linha)</p></td>
+<td class="text-left"><p>Tendência, sazonalidade, quebras estruturais.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Composição (Partes do todo)?</strong></p></td>
+<td class="text-left"><p>1 Categórica</p></td>
+<td class="text-left"><p><strong>Bar Chart</strong> (Barras)</p></td>
+<td class="text-left"><p>Comparação de magnitudes. (Evite Pizza se &gt; 3 categorias).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Quantidades por categoria?</strong></p></td>
+<td class="text-left"><p>1 Categórica + Contagem</p></td>
+<td class="text-left"><p><strong>Bar Chart</strong></p></td>
+<td class="text-left"><p>Frequência de cada categoria.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="exemplos-praticos">
+<h2>2. Exemplos Práticos<a class="headerlink" href="#exemplos-praticos" title="Link to this heading">#</a></h2>
+<section id="histograma-vs-boxplot">
+<h3>2.1 Histograma vs Boxplot<a class="headerlink" href="#histograma-vs-boxplot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use <strong>Histograma</strong> quando quiser ver detalhes da forma (ex: é bimodal? tem duas corcovas de usuários?).</p></li>
+<li><p>Use <strong>Boxplot</strong> quando quiser comparar <em>muitos</em> grupos lado a lado (ex: Salário por Departamento). 30 histogramas seriam ilegíveis; 30 boxplots funcionam bem.</p></li>
+</ul>
+</section>
+<section id="barras-vs-pizza-o-odio-a-pizza">
+<h3>2.2 Barras vs Pizza (O ódio à Pizza)<a class="headerlink" href="#barras-vs-pizza-o-odio-a-pizza" title="Link to this heading">#</a></h3>
+<p>O ser humano é péssimo em comparar áreas e ângulos (Pizza), mas ótimo em comparar comprimentos (Barras).</p>
+<ul class="simple">
+<li><p><strong>Regra de Ouro:</strong> Só use Pizza se tiver 2 ou 3 categorias com diferenças óbvias (ex: 50% vs 50%).</p></li>
+<li><p>Para todo o resto, use <strong>Gráfico de Barras</strong>.</p></li>
+</ul>
+</section>
+<section id="scatter-plot-o-detector-de-padroes">
+<h3>2.3 Scatter Plot: O Detector de Padrões<a class="headerlink" href="#scatter-plot-o-detector-de-padroes" title="Link to this heading">#</a></h3>
+<p>O gráfico de dispersão é o pai do Machine Learning. Antes de rodar uma Regressão Linear, olhe o Scatter.</p>
+<ul class="simple">
+<li><p>Os pontos formam uma linha? (Linear)</p></li>
+<li><p>Formam uma banana/curva? (Não-linear)</p></li>
+<li><p>Tem nuvens separadas? (Clusters)</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pratica-o-mesmo-dado-historias-diferentes">
+<h2>3. Prática: O Mesmo Dado, Histórias Diferentes<a class="headerlink" href="#pratica-o-mesmo-dado-historias-diferentes" title="Link to this heading">#</a></h2>
+<p>Vamos pegar dados de gorjetas (<code class="docutils literal notranslate"><span class="pre">tips</span></code>) e ver como gráficos diferentes respondem perguntas diferentes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Dados clássicos de gorjetas em restaurante</span>
+<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;tips&#39;</span><span class="p">)</span>
+
+<span class="c1"># Configuração estética</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># 1. Pergunta: &quot;Qual o valor mais comum de conta?&quot;</span>
+<span class="c1"># Resposta: Histograma</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">tips</span><span class="p">[</span><span class="s1">&#39;total_bill&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribuição do Valor da Conta (Histograma)&#39;</span><span class="p">)</span>
+
+<span class="c1"># 2. Pergunta: &quot;Quem gasta mais: Fumantes ou Não Fumantes?&quot;</span>
+<span class="c1"># Resposta: Boxplot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;smoker&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;total_bill&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Set2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Conta por Status de Fumante (Boxplot)&#39;</span><span class="p">)</span>
+
+<span class="c1"># 3. Pergunta: &quot;Gorjeta aumenta com a conta?&quot;</span>
+<span class="c1"># Resposta: Scatter Plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;total_bill&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;tip&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relação Conta vs Gorjeta (Scatter)&#39;</span><span class="p">)</span>
+
+<span class="c1"># 4. Pergunta: &quot;Qual dia da semana é mais movimentado?&quot;</span>
+<span class="c1"># Resposta: Countplot (Gráfico de Barras de contagem)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frequência de Clientes por Dia (Barras)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="insights-deste-dashboard">
+<h3>Insights Deste Dashboard<a class="headerlink" href="#insights-deste-dashboard" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Histograma:</strong> A maioria das contas é baixa (~$15), com cauda longa à direita (assimetria positiva).</p></li>
+<li><p><strong>Boxplot:</strong> A mediana de fumantes e não fumantes é similar, mas fumantes têm maior variabilidade (cauda maior).</p></li>
+<li><p><strong>Scatter:</strong> Relação positiva clara. Contas maiores geram gorjetas maiores.</p></li>
+<li><p><strong>Barras:</strong> Sábado e Domingo são os dias de pico.</p></li>
+</ol>
+<p>Escolher o gráfico certo é 80% do trabalho de comunicação.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_iniciante/03_visualizacao_dados"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02_boxplot_outliers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Boxplot, Outliers e Violin Plots</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04_visualizacao_interativa.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Visualização Interativa (Plotly)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-decisao">1. Matriz de Decisão</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-praticos">2. Exemplos Práticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma-vs-boxplot">2.1 Histograma vs Boxplot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barras-vs-pizza-o-odio-a-pizza">2.2 Barras vs Pizza (O ódio à Pizza)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot-o-detector-de-padroes">2.3 Scatter Plot: O Detector de Padrões</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-o-mesmo-dado-historias-diferentes">3. Prática: O Mesmo Dado, Histórias Diferentes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insights-deste-dashboard">Insights Deste Dashboard</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sérgio Berlotto
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

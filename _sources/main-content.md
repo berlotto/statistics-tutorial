@@ -70,6 +70,24 @@ Este documento é a **espinha dorsal teórica e prática** do nosso material. El
         *   [ ] Detectando Outliers: Método do Tukey ($1.5 \times IQR$) vs Z-Score ($>3\sigma$).
         *   [ ] Violin Plot: Boxplot + KDE (O melhor dos dois mundos).
 
+*   **[03_escolha_graficos.md](./01_iniciante/03_visualizacao_dados/03_escolha_graficos.md)**
+    *   *Propósito:* Guia de decisão para não usar gráfico de pizza em série temporal.
+    *   *Conteúdo Obrigatório:*
+        *   [ ] Matriz de Decisão: O que você quer mostrar? (Comparação, Distribuição, Relacionamento).
+        *   [ ] Erros comuns de visualização.
+
+*   **[04_visualizacao_interativa.md](./01_iniciante/03_visualizacao_dados/04_visualizacao_interativa.md)**
+    *   *Propósito:* Ir além do estático com Plotly.
+    *   *Conteúdo Obrigatório:*
+        *   [ ] Scatter plots com Hover.
+        *   [ ] Filtros dinâmicos.
+
+*   **[05_storytelling_dados.md](./01_iniciante/03_visualizacao_dados/05_storytelling_dados.md)**
+    *   *Propósito:* Comunicação para tomada de decisão.
+    *   *Conteúdo Obrigatório:*
+        *   [ ] Princípios de Gestalt.
+        *   [ ] Redução de carga cognitiva (Data-Ink Ratio).
+
 ### 📂 04_probabilidade_basica
 *A linguagem da incerteza.*
 
@@ -113,6 +131,13 @@ Este documento é a **espinha dorsal teórica e prática** do nosso material. El
 ### 📂 06_validacao_premissas
 *A etapa ignorada pela maioria, mas essencial para o rigor.*
 
+*   **[00_fundamentos_testes.md](./02_intermediario/06_validacao_premissas/00_fundamentos_testes.md)**
+    *   *Propósito:* Entender a filosofia da inferência antes da mecânica.
+    *   *Conteúdo Obrigatório:*
+        *   [ ] Hipótese Nula ($H_0$) como "Advogado do Diabo".
+        *   [ ] Erro Tipo I (Falso Positivo) e Tipo II (Falso Negativo).
+        *   [ ] O problema das múltiplas comparações (P-Hacking).
+
 *   **[01_testes_normalidade.md](./02_intermediario/06_validacao_premissas/01_testes_normalidade.md)**
     *   *Conteúdo Obrigatório:*
         *   [ ] Inspeção Visual: Histograma e Q-Q Plot (Quantile-Quantile).
@@ -153,6 +178,13 @@ Este documento é a **espinha dorsal teórica e prática** do nosso material. El
         *   [ ] Erro Tipo I ($\alpha$) e Erro Tipo II ($\beta$).
         *   [ ] Poder ($1 - \beta$): A chance de detectar um efeito que existe.
         *   [ ] Curvas de Poder vs Tamanho da Amostra.
+
+*   **[03_effect_size_significancia_pratica.md](./02_intermediario/08_poder_amostra/03_effect_size_significancia_pratica.md)**
+    *   *Propósito:* Diferenciar "estatisticamente significante" de "importante".
+    *   *Conteúdo Obrigatório:*
+        *   [ ] Cohen's d: Interpretação (Pequeno, Médio, Grande).
+        *   [ ] Intervalo de Confiança para o Tamanho do Efeito.
+        *   [ ] Quando o P-valor engana (Amostras gigantes vs minúsculas).
 
 ### 📂 09_associacao_correlacao
 *   **[01_correlacao.md](./02_intermediario/09_associacao_correlacao/01_correlacao.md)**
@@ -210,7 +242,10 @@ Este documento é a **espinha dorsal teórica e prática** do nosso material. El
 
 ### 📂 15_causalidade_dags
 *   **[01_dags_inferencia_causal.md](./04_avancado_epidemiologia/15_causalidade_dags/01_dags_inferencia_causal.md)**
-    *   *Conteúdo:* Diagramas Causais (DAGs). Caminhos "Backdoor". O que é um Collider e por que não controlar por ele.
+    *   *Conteúdo:*
+        *   [ ] Diagramas Causais (DAGs).
+        *   [ ] Caminhos "Backdoor" e Colisores (O perigo de controlar o que não deve).
+        *   [ ] Propensity Score Matching (PSM): Criando experimentos artificiais.
 
 ### 📂 16_analise_sobrevivencia
 *   **[01_kaplan_meier_logrank.md](./04_avancado_epidemiologia/16_analise_sobrevivencia/01_kaplan_meier_logrank.md)**
@@ -237,4 +272,12 @@ Este documento é a **espinha dorsal teórica e prática** do nosso material. El
 
 ### 📂 20_reporte_cientifico
 *   **[01_escrita_resultados.md](./05_topicos_especiais/20_reporte_cientifico/01_escrita_resultados.md)**
-    *   *Conteúdo:* Como narrar os resultados estatísticos em papers. A importância do "p-valor exato" e ICs. Reprodutibilidade.
+    *   *Conteúdo:* Como narrar os resultados estatísticos em papers. A importância do "p-valor exato" e ICs. Reprodutibilidade e Dicionário de Dados.
+
+### 📂 21_etica_dados
+*   **[01_bias_transparencia.md](./05_topicos_especiais/21_etica_dados/01_bias_transparencia.md)**
+    *   *Conteúdo:* Viés algorítmico (Exemplos reais). Como auditar seus dados por representatividade. O manifesto de transparência.
+
+### 📂 22_estatistica_bayesiana
+*   **[01_introducao_bayesiana.md](./05_topicos_especiais/22_estatistica_bayesiana/01_introducao_bayesiana.md)**
+    *   *Conteúdo:* Teorema de Bayes (Prior, Likelihood, Posterior). Comparação intuitiva com Frequentista (A/B Testing).

@@ -63,6 +63,20 @@ Antes de submeter, pergunte-se:
 3.  **Seed:** Defini `np.random.seed(42)` para que as simulações sejam iguais?
 4.  **Versões:** Anotei as versões das bibliotecas (requirements.txt)?
 
+### 3.1 Template de Dicionário de Dados
+Ajude quem vai ler seu dado daqui a 5 anos (provavelmente você mesmo).
+
+```markdown
+# Dicionário de Dados: Estudo XPTO
+
+| Variável | Tipo | Unidade | Descrição |
+| :--- | :--- | :--- | :--- |
+| `id_paciente` | ID | N/A | Identificador único anonimizado |
+| `pressao_sistolica` | Numérico | mmHg | Média de 3 medidas sentado |
+| `grupo_tratamento` | Categórico | 0/1 | 0=Placebo, 1=Droga Nova |
+| `data_inclusao` | Data | YYYY-MM-DD | Data da assinatura do TCLE |
+```
+
 ---
 
 ## 4. O Gran Finale: Exemplo de Tabela 1

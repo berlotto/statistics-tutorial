@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Inferência Causal: Além da Correlação &#8212; Documentação de Estudos Aprofundados: Estatística</title>
+    <title>DAGs e Inferência Causal &#8212; Documentação de Estudos Aprofundados: Estatística</title>
   
   
   
@@ -57,8 +57,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '04_avancado_epidemiologia/15_causalidade_dags/01_dags_inferencia_causal';</script>
     <link rel="canonical" href="/statistics-tutorial/04_avancado_epidemiologia/15_causalidade_dags/01_dags_inferencia_causal.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -185,6 +183,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../01_iniciante/02_estatistica_descritiva/02_medidas_dispersao.html">Medidas de Dispersão (Variabilidade)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../01_iniciante/03_visualizacao_dados/01_distribuicao_frequencia.html">Distribuição de Frequência e Forma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../01_iniciante/03_visualizacao_dados/02_boxplot_outliers.html">Boxplot, Outliers e Violin Plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_iniciante/03_visualizacao_dados/03_escolha_graficos.html">A Arte de Escolher o Gráfico Correto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_iniciante/03_visualizacao_dados/04_visualizacao_interativa.html">Visualização Interativa (Plotly)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_iniciante/03_visualizacao_dados/05_storytelling_dados.html">Storytelling com Dados</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../01_iniciante/04_probabilidade_basica/01_conceitos_probabilidade.html">Conceitos de Probabilidade e Teorema de Bayes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../01_iniciante/04_probabilidade_basica/02_distribuicoes_discretas.html">Distribuições Discretas (Contagens)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../01_iniciante/04_probabilidade_basica/03_distribuicoes_continuas.html">Distribuições Contínuas (A Régua do Mundo)</a></li>
@@ -193,12 +194,17 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/05_teorema_limite_central/01_distribuicao_amostral.html">Teorema Central do Limite (TLC) e Distribuição Amostral</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/05_teorema_limite_central/02_intervalos_confianca.html">Intervalos de Confiança (IC): A Margem de Erro Científica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/06_validacao_premissas/00_fundamentos_testes.html">Fundamentos de Testes de Hipótese</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/06_validacao_premissas/01_testes_normalidade.html">Validação de Premissas: Normalidade</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/06_validacao_premissas/02_homocedasticidade.html">Validação de Premissas: Homocedasticidade</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/07_comparacao_grupos/01_teste_t_mann_whitney.html">Comparação de 2 Grupos: Teste T e Seus Amigos</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/07_comparacao_grupos/02_anova_kruskal.html">Comparando 3+ Grupos: ANOVA e Kruskal-Wallis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/08_poder_amostra/01_calculo_amostral.html">Cálculo Amostral: Quantos Precisamos?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/08_poder_amostra/02_poder_teste.html">O Poder do Teste (Statistical Power)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/08_poder_amostra/03_effect_size_significancia_pratica.html">Effect Size e Significância Prática</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/09_associacao_correlacao/01_correlacao.html">Correlação: A Medida da Associação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/09_associacao_correlacao/02_chi_quadrado.html">Associação Categórica: Chi-Quadrado e Fisher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../02_intermediario/09_associacao_correlacao/03_correlacao_parcial.html">Correlação Parcial: Controlando Confundidores</a></li>
@@ -215,7 +221,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 4 - Epidemiologia Avançada</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../14_tratamento_dados/01_missing_data.html">Missing Data: O Silêncio Também Fala</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Inferência Causal: Além da Correlação</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">DAGs e Inferência Causal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../16_analise_sobrevivencia/01_kaplan_meier_logrank.html">Análise de Sobrevivência: Kaplan-Meier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../16_analise_sobrevivencia/02_cox_regression.html">Regressão de Cox: Sobrevivência Multivariada</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../17_medidas_epidemiologicas/01_risco_odds_prevalencia.html">Medidas Epidemiológicas: O Idioma da Saúde</a></li>
@@ -225,6 +231,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../05_topicos_especiais/18_multivariada_nao_supervisionada/01_pca_clustering.html">Multivariada Não-Supervisionada: PCA e Clustering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../05_topicos_especiais/19_meta_analise/01_introducao_meta_analise.html">Meta-Análise: A Ciência da Síntese</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../05_topicos_especiais/20_reporte_cientifico/01_escrita_resultados.html">Reporte Científico: Escrevendo para Perdurar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05_topicos_especiais/21_etica_dados/01_bias_transparencia.html">Ética em Dados e Transparência</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05_topicos_especiais/22_estatistica_bayesiana/01_introducao_bayesiana.html">Introdução à Estatística Bayesiana</a></li>
 </ul>
 
     </div>
@@ -410,7 +418,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Inferência Causal: Além da Correlação</h1>
+    <h1>DAGs e Inferência Causal</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -420,15 +428,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-dag-directed-acyclic-graph">1. O DAG (Directed Acyclic Graph)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-3-estruturas-fundamentais">2. As 3 Estruturas Fundamentais</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-o-garfo-fork-confundidor-a-leftarrow-b-to-c">A. O Garfo (Fork): Confundidor (A <span class="math notranslate nohighlight">\(\leftarrow\)</span> B <span class="math notranslate nohighlight">\(\to\)</span> C)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-a-corrente-chain-mediador-a-to-b-to-c">B. A Corrente (Chain): Mediador (A <span class="math notranslate nohighlight">\(\to\)</span> B <span class="math notranslate nohighlight">\(\to\)</span> C)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-o-colisor-collider-o-perigo-oculto-a-to-b-leftarrow-c">C. O Colisor (Collider): O Perigo Oculto (A <span class="math notranslate nohighlight">\(\to\)</span> B <span class="math notranslate nohighlight">\(\leftarrow\)</span> C)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dags-digramas-aciclicos-dirigidos">1. DAGs (Digramas Acíclicos Dirigidos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propensity-score-matching-psm">2. Propensity Score Matching (PSM)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-algoritmo">O Algoritmo</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-em-python-o-paradoxo-de-berkson-collider-bias">3. Prática em Python: O Paradoxo de Berkson (Collider Bias)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aconteceu">O que aconteceu?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-em-python-psm-simplificado">3. Prática em Python: PSM Simplificado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacao">Interpretação</a></li>
 </ul>
 </li>
 </ul>
@@ -442,127 +448,116 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="inferencia-causal-alem-da-correlacao">
-<h1>Inferência Causal: Além da Correlação<a class="headerlink" href="#inferencia-causal-alem-da-correlacao" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="dags-e-inferencia-causal">
+<h1>DAGs e Inferência Causal<a class="headerlink" href="#dags-e-inferencia-causal" title="Link to this heading">#</a></h1>
 <blockquote>
-<div><p><strong>“Correlação não implica Causalidade… mas com um DAG, você pode desenhar o caminho.”</strong></p>
-<p>Até hoje te ensinaram que para provar causa precisa de um Ensaio Clínico Randomizado (RCT). Mentira.
-Com a revolução da Causalidade (Judea Pearl), podemos inferir causa de dados observacionais, <strong>SE</strong> desenharmos nossas premissas corretamente.</p>
+<div><p><strong>“Correlação não é causalidade, mas é uma dica muito boa.”</strong> — Edward Tufte (Meia verdade)</p>
 </div></blockquote>
+<p>Dados observacionais são cheios de armadilhas.</p>
+<ul class="simple">
+<li><p>Quem toma vinho tem mais saúde. (Causa: Vinho? Ou Renda?)</p></li>
+<li><p>Quem usa o remédio morre mais. (Causa: Remédio? Ou quem toma já estava mais grave?)</p></li>
+</ul>
+<p>A Inferência Causal nos dá ferramentas para sair da correlação e chegar na causa.</p>
 <hr class="docutils" />
-<section id="o-dag-directed-acyclic-graph">
-<h2>1. O DAG (Directed Acyclic Graph)<a class="headerlink" href="#o-dag-directed-acyclic-graph" title="Link to this heading">#</a></h2>
-<p>É um desenho das suas premissas sobre como o mundo funciona.</p>
+<section id="dags-digramas-aciclicos-dirigidos">
+<h2>1. DAGs (Digramas Acíclicos Dirigidos)<a class="headerlink" href="#dags-digramas-aciclicos-dirigidos" title="Link to this heading">#</a></h2>
+<p>Antes de rodar código, desenhe sua hipótese.</p>
 <ul class="simple">
-<li><p>Setas representam CAUSA (<span class="math notranslate nohighlight">\(A \to B\)</span>).</p></li>
-<li><p>A falta de seta é a premissa mais forte: diz que A <strong>não</strong> causa B.</p></li>
-</ul>
-</section>
-<section id="as-3-estruturas-fundamentais">
-<h2>2. As 3 Estruturas Fundamentais<a class="headerlink" href="#as-3-estruturas-fundamentais" title="Link to this heading">#</a></h2>
-<p>Todo gráfico complexo é montado com peças de Lego dessas 3 estruturas.</p>
-<section id="a-o-garfo-fork-confundidor-a-leftarrow-b-to-c">
-<h3>A. O Garfo (Fork): Confundidor (A <span class="math notranslate nohighlight">\(\leftarrow\)</span> B <span class="math notranslate nohighlight">\(\to\)</span> C)<a class="headerlink" href="#a-o-garfo-fork-confundidor-a-leftarrow-b-to-c" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(B\)</span> é a causa comum de <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(C\)</span>.</p>
-<ul class="simple">
-<li><p><em>Exemplo:</em> <span class="math notranslate nohighlight">\(B\)</span> (Calor) causa <span class="math notranslate nohighlight">\(A\)</span> (Venda de Sorvete) e <span class="math notranslate nohighlight">\(C\)</span> (Ataques de Tubarão).</p></li>
-<li><p><em>Problema:</em> <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(C\)</span> parecerão correlacionados.</p></li>
-<li><p><em>Solução:</em> <strong>Controlar por B</strong> (fechar a porta dos fundos/backdoor). Se olharmos só dias com a mesma temperatura, a correlação some.</p></li>
-</ul>
-</section>
-<section id="b-a-corrente-chain-mediador-a-to-b-to-c">
-<h3>B. A Corrente (Chain): Mediador (A <span class="math notranslate nohighlight">\(\to\)</span> B <span class="math notranslate nohighlight">\(\to\)</span> C)<a class="headerlink" href="#b-a-corrente-chain-mediador-a-to-b-to-c" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(A\)</span> causa <span class="math notranslate nohighlight">\(B\)</span>, que causa <span class="math notranslate nohighlight">\(C\)</span>.</p>
-<ul class="simple">
-<li><p><em>Exemplo:</em> <span class="math notranslate nohighlight">\(A\)</span> (Fogo) <span class="math notranslate nohighlight">\(\to\)</span> <span class="math notranslate nohighlight">\(B\)</span> (Fumaça) <span class="math notranslate nohighlight">\(\to\)</span> <span class="math notranslate nohighlight">\(C\)</span> (Alarme).</p></li>
-<li><p><em>Atenção:</em> Se você quer saber o efeito total do Fogo no Alarme, <strong>NÃO CONTROLE PELA FUMAÇA</strong>. Se você controlar por <span class="math notranslate nohighlight">\(B\)</span>, você bloqueia o caminho causal e conclui (erroneamente) que Fogo não toca o alarme.</p></li>
-</ul>
-</section>
-<section id="c-o-colisor-collider-o-perigo-oculto-a-to-b-leftarrow-c">
-<h3>C. O Colisor (Collider): O Perigo Oculto (A <span class="math notranslate nohighlight">\(\to\)</span> B <span class="math notranslate nohighlight">\(\leftarrow\)</span> C)<a class="headerlink" href="#c-o-colisor-collider-o-perigo-oculto-a-to-b-leftarrow-c" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(C\)</span> causam <span class="math notranslate nohighlight">\(B\)</span>. A e C são independentes, mas “colidem” em B.</p>
-<ul class="simple">
-<li><p><em>Exemplo Clássico:</em> <span class="math notranslate nohighlight">\(A\)</span> (Beleza) e <span class="math notranslate nohighlight">\(C\)</span> (Talento) causam <span class="math notranslate nohighlight">\(B\)</span> (Ser Celebridade).</p></li>
-<li><p><em>Problema:</em> Na população geral, gente bonita não é mais nem menos talentosa. A correlação é zero.</p></li>
-<li><p><em>Onde o viés nasce:</em> Quando você olha <strong>apenas para Celebridades</strong> (controla por <span class="math notranslate nohighlight">\(B\)</span>), você cria uma regra oculta: “Para estar aqui, ou você é lindo, ou é talentoso (ou ambos)”.</p>
+<li><p><strong>Confundimento (Confounder):</strong> Uma variável Z que causa X e Y.</p>
 <ul>
-<li><p>Se eu vejo uma celebridade feia, ela <strong>TEM</strong> que ser talentosa (senão não estaria ali).</p></li>
-<li><p>Se eu vejo uma celebridade linda, ela não precisa necessariamente de talento.</p></li>
-<li><p>Isso cria uma <strong>correlação negativa artificial</strong>: entre celebridades, quanto mais bonito, “menos talentoso” parece ser. Isso é falso no mundo real, é uma ilusão da amostra selecionada.</p></li>
+<li><p>Ex: Calor (Z) -&gt; Vendas de Sorvete (X) e Crimes (Y).</p></li>
+<li><p>Se não controlar Z, parece que Sorvete causa Crime.</p></li>
 </ul>
 </li>
-<li><p><em>Regra de Ouro:</em> <strong>NUNCA controle por um colisor</strong>. Isso abre um caminho de associação falso onde antes não existia nada.</p></li>
+<li><p><strong>Colisor (Collider):</strong> Uma variável Z que é causada por X e Y.</p>
+<ul>
+<li><p>Ex: Beleza (X) e Talento (Y) -&gt; Sucesso (Z).</p></li>
+<li><p>Se você filtrar só “Atores de Sucesso” (controlar Z), cria uma correlação negativa falsa entre Beleza e Talento.</p></li>
 </ul>
+</li>
+</ul>
+<p><strong>Regra de Ouro (Backdoor Criterion):</strong> Você deve controlar (incluir na regressão) os Confundidores, mas <strong>NUNCA</strong> os Colisores.</p>
+</section>
+<hr class="docutils" />
+<section id="propensity-score-matching-psm">
+<h2>2. Propensity Score Matching (PSM)<a class="headerlink" href="#propensity-score-matching-psm" title="Link to this heading">#</a></h2>
+<p>Quando não podemos fazer um teste A/B randômico (ética ou custo), usamos dados observacionais. O problema: o grupo Tratamento é diferente do Controle (viés de seleção).</p>
+<p>O PSM tenta “criar” um experimento artificial pareando gêmeos estatísticos.</p>
+<section id="o-algoritmo">
+<h3>O Algoritmo<a class="headerlink" href="#o-algoritmo" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Calcule a probabilidade de cada pessoa receber o tratamento (Propensity Score) usando Regressão Logística baseada em suas características (idade, renda, gravidade).</p></li>
+<li><p>Encontre para cada pessoa tratada, uma pessoa não-tratada com score “gêmeo”.</p></li>
+<li><p>Compare os desfechos apenas desses pares.</p></li>
+</ol>
 </section>
 </section>
 <hr class="docutils" />
-<section id="pratica-em-python-o-paradoxo-de-berkson-collider-bias">
-<h2>3. Prática em Python: O Paradoxo de Berkson (Collider Bias)<a class="headerlink" href="#pratica-em-python-o-paradoxo-de-berkson-collider-bias" title="Link to this heading">#</a></h2>
-<p>Vamos provar que controlar pela variável errada cria correlações falsas.</p>
+<section id="pratica-em-python-psm-simplificado">
+<h2>3. Prática em Python: PSM Simplificado<a class="headerlink" href="#pratica-em-python-psm-simplificado" title="Link to this heading">#</a></h2>
+<p>Vamos simular um tratamento que <strong>não funciona</strong>, mas parece funcionar porque foi dado para pacientes mais jovens.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">NearestNeighbors</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="c1"># Cenário: Hollywood</span>
-<span class="c1"># Queremos saber: Beleza causa Talento? (Esperamos que NÃO)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
 
-<span class="c1"># Beleza e Talento são independentes na população (Normal 0, 1)</span>
-<span class="n">beleza</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="n">talento</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="c1"># 1. Gerar Dados Confounding</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 
-<span class="c1"># Mas para ser Famoso (Sucesso), você precisa da soma dos dois</span>
-<span class="c1"># Sucesso = Beleza + Talento + Ruído</span>
-<span class="n">score_sucesso</span> <span class="o">=</span> <span class="n">beleza</span> <span class="o">+</span> <span class="n">talento</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="c1"># Tratamento é dado mais para jovens (Viés!)</span>
+<span class="c1"># Probabilidade baseada na idade (quanto mais jovem, mais provável)</span>
+<span class="n">prob_trat</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">idade</span><span class="p">)))</span>
+<span class="n">tratamento</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">prob_trat</span><span class="p">)</span>
 
-<span class="c1"># Apenas os Top 15% viram Celebridades (Amostra Selecionada)</span>
-<span class="n">limite</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">score_sucesso</span><span class="p">,</span> <span class="mi">85</span><span class="p">)</span>
-<span class="n">is_celebridade</span> <span class="o">=</span> <span class="n">score_sucesso</span> <span class="o">&gt;</span> <span class="n">limite</span>
+<span class="c1"># Desfecho (Saúde): Jovens têm mais saúde. O Tratamento NÃO faz nada (efeito 0).</span>
+<span class="n">saude</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">idade</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">0</span> <span class="o">*</span> <span class="n">tratamento</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;beleza&#39;</span><span class="p">:</span> <span class="n">beleza</span><span class="p">,</span> <span class="s1">&#39;talento&#39;</span><span class="p">:</span> <span class="n">talento</span><span class="p">,</span> <span class="s1">&#39;celebridade&#39;</span><span class="p">:</span> <span class="n">is_celebridade</span><span class="p">})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;idade&#39;</span><span class="p">:</span> <span class="n">idade</span><span class="p">,</span> <span class="s1">&#39;tratamento&#39;</span><span class="p">:</span> <span class="n">tratamento</span><span class="p">,</span> <span class="s1">&#39;saude&#39;</span><span class="p">:</span> <span class="n">saude</span><span class="p">})</span>
 
-<span class="c1"># 1. Análise na População Geral (Correta)</span>
-<span class="n">modelo_real</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">&quot;talento ~ beleza&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="c1"># Análise Naive (Ingênua)</span>
+<span class="n">naive_diff</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tratamento&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;saude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tratamento&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;saude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Diferença Naive: </span><span class="si">{</span><span class="n">naive_diff</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> (Parece que o tratamento melhora a saúde!)&quot;</span><span class="p">)</span>
 
-<span class="c1"># 2. Análise Estratificada (SÓ nas Celebridades - Errada)</span>
-<span class="n">modelo_celebridades</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">&quot;talento ~ beleza&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;celebridade&#39;</span><span class="p">]</span><span class="o">==</span><span class="kc">True</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="c1"># 2. Calcular Propensity Score</span>
+<span class="c1"># P(Tratamento | Idade)</span>
+<span class="n">log_reg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">log_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;idade&#39;</span><span class="p">]],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tratamento&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;propensity_score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">log_reg</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;idade&#39;</span><span class="p">]])[:,</span> <span class="mi">1</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- O Efeito da Beleza no Talento ---&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;1. População Geral (Verdade): Beta = </span><span class="si">{</span><span class="n">modelo_real</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;beleza&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> (Deveria ser 0)&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;2. Só Celebridades (Viés):   Beta = </span><span class="si">{</span><span class="n">modelo_celebridades</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;beleza&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># 3. Matching (Vizinho mais próximo)</span>
+<span class="n">treatment_group</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tratamento&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">control_group</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tratamento&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 
-<span class="c1"># Visualização</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">nbrs</span> <span class="o">=</span> <span class="n">NearestNeighbors</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">control_group</span><span class="p">[[</span><span class="s1">&#39;propensity_score&#39;</span><span class="p">]])</span>
+<span class="n">distances</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">nbrs</span><span class="o">.</span><span class="n">kneighbors</span><span class="p">(</span><span class="n">treatment_group</span><span class="p">[[</span><span class="s1">&#39;propensity_score&#39;</span><span class="p">]])</span>
 
-<span class="c1"># Plotando todo mundo (cinza)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;beleza&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;talento&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;celebridade&#39;</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Anônimos&#39;</span><span class="p">)</span>
+<span class="c1"># Pegar os controles pareados</span>
+<span class="n">matched_controls</span> <span class="o">=</span> <span class="n">control_group</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="o">.</span><span class="n">flatten</span><span class="p">()]</span>
 
-<span class="c1"># Plotando celebridades (vermelho)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;beleza&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;talento&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;celebridade&#39;</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Celebridades&#39;</span><span class="p">)</span>
+<span class="c1"># 4. Comparar Pares (ATE - Average Treatment Effect on Treated)</span>
+<span class="n">diff_matched</span> <span class="o">=</span> <span class="n">treatment_group</span><span class="p">[</span><span class="s1">&#39;saude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">matched_controls</span><span class="p">[</span><span class="s1">&#39;saude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">ate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">diff_matched</span><span class="p">)</span>
 
-<span class="c1"># Regressão nas Celebridades</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;beleza&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;talento&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;celebridade&#39;</span><span class="p">]],</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Diferença Após Matching (PSM): </span><span class="si">{</span><span class="n">ate</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> (Próximo de zero, que é a verdade!)&quot;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Paradoxo de Berkson: O Viés do Colisor&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Beleza&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Talento&#39;</span><span class="p">)</span>
+<span class="c1"># Visualização de Diagnóstico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tratamento&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;propensity_score&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Tratado&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tratamento&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;propensity_score&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Controle&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Overlap de Propensity Scores (Precisa haver sobreposição!)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="c1"># plt.show()</span>
 </pre></div>
 </div>
-<section id="o-que-aconteceu">
-<h3>O que aconteceu?<a class="headerlink" href="#o-que-aconteceu" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>No grupo vermelho (Celebridades), a reta desce (correlação negativa). Parece que “Gente bonita é burra/sem talento”.</p></li>
-<li><p>Mas isso é falso! A reta cinza (população) é plana.</p></li>
-<li><p><strong>Motivo:</strong> Se você é uma celebridade e é feio, <strong>você TEM que ser talentoso</strong> para ter entrado lá. Se você é lindo, pode se dar ao luxo de ter menos talento.</p></li>
-<li><p>Essa correlação negativa foi criada artificialmente ao selecionarmos a amostra baseada numa consequência comum.</p></li>
-</ul>
+<section id="interpretacao">
+<h3>Interpretação<a class="headerlink" href="#interpretacao" title="Link to this heading">#</a></h3>
+<p>O PSM removeu o viés da idade. Mostrou que a diferença de saúde era explicada pela juventude, não pelo remédio.</p>
 </section>
 </section>
 </section>
@@ -631,15 +626,13 @@ Com a revolução da Causalidade (Judea Pearl), podemos inferir causa de dados o
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-dag-directed-acyclic-graph">1. O DAG (Directed Acyclic Graph)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-3-estruturas-fundamentais">2. As 3 Estruturas Fundamentais</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-o-garfo-fork-confundidor-a-leftarrow-b-to-c">A. O Garfo (Fork): Confundidor (A <span class="math notranslate nohighlight">\(\leftarrow\)</span> B <span class="math notranslate nohighlight">\(\to\)</span> C)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-a-corrente-chain-mediador-a-to-b-to-c">B. A Corrente (Chain): Mediador (A <span class="math notranslate nohighlight">\(\to\)</span> B <span class="math notranslate nohighlight">\(\to\)</span> C)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-o-colisor-collider-o-perigo-oculto-a-to-b-leftarrow-c">C. O Colisor (Collider): O Perigo Oculto (A <span class="math notranslate nohighlight">\(\to\)</span> B <span class="math notranslate nohighlight">\(\leftarrow\)</span> C)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dags-digramas-aciclicos-dirigidos">1. DAGs (Digramas Acíclicos Dirigidos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propensity-score-matching-psm">2. Propensity Score Matching (PSM)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-algoritmo">O Algoritmo</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-em-python-o-paradoxo-de-berkson-collider-bias">3. Prática em Python: O Paradoxo de Berkson (Collider Bias)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aconteceu">O que aconteceu?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-em-python-psm-simplificado">3. Prática em Python: PSM Simplificado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacao">Interpretação</a></li>
 </ul>
 </li>
 </ul>

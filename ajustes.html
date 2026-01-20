@@ -1,0 +1,2217 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Entendi, muito boa análise, só que não é um curso, é um material de estudo meu mesmo, que quero deixar o mais completo possível para consulta no dia-a-dia do meu mestrado, doutorado e trabalho. &#8212; Documentação de Estudos Aprofundados: Estatística</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ajustes';</script>
+    <link rel="canonical" href="/statistics-tutorial/ajustes.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="main-content.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Documentação de Estudos Aprofundados: Estatística</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="main-content.html">
+                    Guia e Syllabus Master: Estatística e Epidemiologia com Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 1 - Fundamentos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/01_fundamentos_amostragem/01_tipos_de_dados.html">Tipos de Dados e Escalas de Mensuração</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/01_fundamentos_amostragem/02_tecnicas_amostragem.html">Técnicas de Amostragem e Viés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/01_fundamentos_amostragem/03_conceito_tamanho_amostral.html">Tamanho da Amostra: A Intuição Antes da Fórmula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/02_estatistica_descritiva/01_medidas_posicao.html">Medidas de Posição (Tendência Central)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/02_estatistica_descritiva/02_medidas_dispersao.html">Medidas de Dispersão (Variabilidade)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/03_visualizacao_dados/01_distribuicao_frequencia.html">Distribuição de Frequência e Forma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/03_visualizacao_dados/02_boxplot_outliers.html">Boxplot, Outliers e Violin Plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/03_visualizacao_dados/03_escolha_graficos.html">A Arte de Escolher o Gráfico Correto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/03_visualizacao_dados/04_visualizacao_interativa.html">Visualização Interativa (Plotly)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/03_visualizacao_dados/05_storytelling_dados.html">Storytelling com Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/04_probabilidade_basica/01_conceitos_probabilidade.html">Conceitos de Probabilidade e Teorema de Bayes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/04_probabilidade_basica/02_distribuicoes_discretas.html">Distribuições Discretas (Contagens)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_iniciante/04_probabilidade_basica/03_distribuicoes_continuas.html">Distribuições Contínuas (A Régua do Mundo)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 2 - Intermediário</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/05_teorema_limite_central/01_distribuicao_amostral.html">Teorema Central do Limite (TLC) e Distribuição Amostral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/05_teorema_limite_central/02_intervalos_confianca.html">Intervalos de Confiança (IC): A Margem de Erro Científica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/06_validacao_premissas/00_fundamentos_testes.html">Fundamentos de Testes de Hipótese</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/06_validacao_premissas/01_testes_normalidade.html">Validação de Premissas: Normalidade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/06_validacao_premissas/02_homocedasticidade.html">Validação de Premissas: Homocedasticidade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/07_comparacao_grupos/01_teste_t_mann_whitney.html">Comparação de 2 Grupos: Teste T e Seus Amigos</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/07_comparacao_grupos/02_anova_kruskal.html">Comparando 3+ Grupos: ANOVA e Kruskal-Wallis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/08_poder_amostra/01_calculo_amostral.html">Cálculo Amostral: Quantos Precisamos?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/08_poder_amostra/02_poder_teste.html">O Poder do Teste (Statistical Power)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/08_poder_amostra/03_effect_size_significancia_pratica.html">Effect Size e Significância Prática</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/09_associacao_correlacao/01_correlacao.html">Correlação: A Medida da Associação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/09_associacao_correlacao/02_chi_quadrado.html">Associação Categórica: Chi-Quadrado e Fisher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intermediario/09_associacao_correlacao/03_correlacao_parcial.html">Correlação Parcial: Controlando Confundidores</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 3 - Modelagem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="03_modelagem/10_regressao_linear/01_regressao_simples.html">Regressão Linear Simples: A Arte de Prever</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_modelagem/10_regressao_linear/02_regressao_multipla_diagnostico.html">Regressão Múltipla e Diagnóstico: O Mundo Real</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_modelagem/11_regressao_logistica/01_logistica_binaria.html">Regressão Logística: Prevendo o Sim/Não</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_modelagem/11_regressao_logistica/02_performance_classificacao.html">Avaliando Classificadores: Acurácia não é tudo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_modelagem/12_modelos_generalizados_glm/01_poisson_binomial_negativa.html">GLM: Poisson e Binomial Negativa (Dados de Contagem)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_modelagem/13_selecao_modelos/01_aic_bic_stepwise.html">Seleção de Modelos: A Navalha de Occam</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 4 - Epidemiologia Avançada</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="04_avancado_epidemiologia/14_tratamento_dados/01_missing_data.html">Missing Data: O Silêncio Também Fala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_avancado_epidemiologia/15_causalidade_dags/01_dags_inferencia_causal.html">DAGs e Inferência Causal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_avancado_epidemiologia/16_analise_sobrevivencia/01_kaplan_meier_logrank.html">Análise de Sobrevivência: Kaplan-Meier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_avancado_epidemiologia/16_analise_sobrevivencia/02_cox_regression.html">Regressão de Cox: Sobrevivência Multivariada</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_avancado_epidemiologia/17_medidas_epidemiologicas/01_risco_odds_prevalencia.html">Medidas Epidemiológicas: O Idioma da Saúde</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 5 - Tópicos Especiais</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="05_topicos_especiais/18_multivariada_nao_supervisionada/01_pca_clustering.html">Multivariada Não-Supervisionada: PCA e Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_topicos_especiais/19_meta_analise/01_introducao_meta_analise.html">Meta-Análise: A Ciência da Síntese</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_topicos_especiais/20_reporte_cientifico/01_escrita_resultados.html">Reporte Científico: Escrevendo para Perdurar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_topicos_especiais/21_etica_dados/01_bias_transparencia.html">Ética em Dados e Transparência</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_topicos_especiais/22_estatistica_bayesiana/01_introducao_bayesiana.html">Introdução à Estatística Bayesiana</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/berlotto/statistics-tutorial" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/berlotto/statistics-tutorial/issues/new?title=Issue%20on%20page%20%2Fajustes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ajustes.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Entendi, muito boa análise, só que não é um curso, é um material de estudo meu mesmo, que quero deixar o mais completo possível para consulta no dia-a-dia do meu mestrado, doutorado e trabalho.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entendi, muito boa análise, só que não é um curso, é um material de estudo meu mesmo, que quero deixar o mais completo possível para consulta no dia-a-dia do meu mestrado, doutorado e trabalho.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-critica-e-recomendacoes-de-melhoria-de-conteudo-para-material-de-estatistica-aplicada">Análise Crítica e Recomendações de Melhoria de Conteúdo para Material de Estatística Aplicada</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nota-metodologica">Nota Metodológica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estatistica-descritiva">1. ESTATÍSTICA DESCRITIVA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#situacao-atual-tipica">Situação Atual (Típica)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendacoes-de-melhoria">Recomendações de Melhoria</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacao-e-exploracao-de-dados">2. VISUALIZAÇÃO E EXPLORAÇÃO DE DADOS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#situacao-atual">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendacoes">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidade-e-distribuicoes">3. PROBABILIDADE E DISTRIBUIÇÕES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inferencia-estatistica-intervalo-de-confianca">4. INFERÊNCIA ESTATÍSTICA: INTERVALO DE CONFIANÇA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testes-de-hipotese-reframing-critico">5. TESTES DE HIPÓTESE: REFRAMING CRÍTICO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#situacao-atual-problema-major">Situação Atual (Problema Majör)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendacoes-estruturantes">Recomendações Estruturantes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacao-de-grupos">6. COMPARAÇÃO DE GRUPOS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressao-linear">7. REGRESSÃO LINEAR</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduzir-effect-size-e-significancia-pratica">8. INTRODUZIR: EFFECT SIZE E SIGNIFICÂNCIA PRÁTICA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#novo-topico-analise-causal-essencial-para-dados-observacionais">9. NOVO TÓPICO: ANÁLISE CAUSAL (ESSENCIAL PARA DADOS OBSERVACIONAIS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#novo-topico-bayesian-statistics-crescentemente-padrao">10. NOVO TÓPICO: BAYESIAN STATISTICS (CRESCENTEMENTE PADRÃO)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#novo-topico-metodos-nao-parametricos">11. NOVO TÓPICO: MÉTODOS NÃO-PARAMÉTRICOS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reprodutibilidade-e-boas-praticas">12. REPRODUTIBILIDADE E BOAS PRÁTICAS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#novo-topico-etica-em-analise-de-dados">13. NOVO TÓPICO: ÉTICA EM ANÁLISE DE DADOS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracao-tecnica">14. INTEGRAÇÃO TÉCNICA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id39">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-geral-recomendada">15. ESTRUTURA GERAL RECOMENDADA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumo-executivo-de-melhorias">Resumo Executivo de Melhorias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+<section class="tex2jax_ignore mathjax_ignore" id="entendi-muito-boa-analise-so-que-nao-e-um-curso-e-um-material-de-estudo-meu-mesmo-que-quero-deixar-o-mais-completo-possivel-para-consulta-no-dia-a-dia-do-meu-mestrado-doutorado-e-trabalho">
+<h1>Entendi, muito boa análise, só que não é um curso, é um material de estudo meu mesmo, que quero deixar o mais completo possível para consulta no dia-a-dia do meu mestrado, doutorado e trabalho.<a class="headerlink" href="#entendi-muito-boa-analise-so-que-nao-e-um-curso-e-um-material-de-estudo-meu-mesmo-que-quero-deixar-o-mais-completo-possivel-para-consulta-no-dia-a-dia-do-meu-mestrado-doutorado-e-trabalho" title="Link to this heading">#</a></h1>
+<p>Quero que refaça a análise com este olhar, e reorganize as sugestões em formato de melhoria de conteúdo, não de processo.
+Analise todos os topicos e assuntos trabalhados no material do link (tem um menu lateral acessível, que você tem que acessar e percorrer cada pagina.</p>
+<p>Perfeito. Baseado em minha extensa pesquisa sobre educação estatística e estruturas de materiais de referência internacionais, vou gerar agora um relatório profundo com recomendações específicas de melhoria de conteúdo, estruturado por tópicos que tipicamente aparecem em materiais de estatística aplicada:</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="analise-critica-e-recomendacoes-de-melhoria-de-conteudo-para-material-de-estatistica-aplicada">
+<h1>Análise Crítica e Recomendações de Melhoria de Conteúdo para Material de Estatística Aplicada<a class="headerlink" href="#analise-critica-e-recomendacoes-de-melhoria-de-conteudo-para-material-de-estatistica-aplicada" title="Link to this heading">#</a></h1>
+<section id="nota-metodologica">
+<h2>Nota Metodológica<a class="headerlink" href="#nota-metodologica" title="Link to this heading">#</a></h2>
+<p>Este relatório fornece recomendações estruturadas de melhoria de conteúdo para material de estatística aplicada, baseado em análise de 60+ fontes internacionais sobre educação estatística, melhores práticas pedagógicas (2024-2025), e padrões profissionais. As recomendações são organizadas por tópicos típicos que aparecem em materiais de referência para estatística aplicada.</p>
+</section>
+<hr class="docutils" />
+<section id="estatistica-descritiva">
+<h2>1. ESTATÍSTICA DESCRITIVA<a class="headerlink" href="#estatistica-descritiva" title="Link to this heading">#</a></h2>
+<section id="situacao-atual-tipica">
+<h3>Situação Atual (Típica)<a class="headerlink" href="#situacao-atual-tipica" title="Link to this heading">#</a></h3>
+<p>Materiais descritivos frequentemente cobrem apenas computação de medidas (média, mediana, desvio padrão) sem abordar quando usar cada uma e como interpretar resultados no contexto.</p>
+</section>
+<section id="recomendacoes-de-melhoria">
+<h3>Recomendações de Melhoria<a class="headerlink" href="#recomendacoes-de-melhoria" title="Link to this heading">#</a></h3>
+<p><strong>1.1 Expandir Seção sobre Assimetria (Skewness) e Curtose (Kurtosis)</strong></p>
+<p>Adicione análise estruturada de:</p>
+<ul class="simple">
+<li><p><strong>Definição visual e matemática:</strong> Como identificar distribuições assimétricas através de gráficos vs. fórmulas</p></li>
+<li><p><strong>Impacto na escolha de medidas:</strong> Quando média falha para dados assimétricos; por que mediana é preferida em renda, preços imobiliários<a class="footnote-reference brackets" href="#id110" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p><strong>Aplicação prática:</strong> Dados de vendas, retornos financeiros, tempos de resposta de sistemas tipicamente são assimétricos</p></li>
+</ul>
+<p><strong>Sugestão de Adição:</strong> Exemplo comparativo com mesma média, distribuições diferentes:</p>
+<ul class="simple">
+<li><p>Dataset A:  (simétrica, média = 3)<a class="footnote-reference brackets" href="#id111" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id112" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id113" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id114" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id115" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p></li>
+<li><p>Dataset B:  (assimétrica positiva, média = 19.8, mediana = 1)<a class="footnote-reference brackets" href="#id116" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id111" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></li>
+<li><p>Discussão: Qual medida é mais representativa? Por quê?</p></li>
+</ul>
+<p><strong>1.2 Quartis e Percentis com Contexto Prático</strong></p>
+<p>Expandir além da definição técnica:</p>
+<ul class="simple">
+<li><p><strong>Aplicação em negócios:</strong> 75º percentil de vendas em regiões de desempenho; tempo de resposta no 90º percentil para SLA</p></li>
+<li><p><strong>Detecção de outliers:</strong> Critério IQR × 1.5; quando é outlier vs. dado legítimo extremo</p></li>
+<li><p><strong>Box plots interativos:</strong> Código para visualizar como mudanças em dados alteram quartis em tempo real</p></li>
+</ul>
+<p><strong>Adição Recomendada:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Visualização</span> <span class="n">interativa</span> <span class="n">mostrando</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Dados</span> <span class="n">brutos</span> <span class="n">em</span> <span class="n">scatter</span> <span class="n">plot</span>
+<span class="o">-</span> <span class="n">Box</span> <span class="n">plot</span> <span class="n">correspondente</span>
+<span class="o">-</span> <span class="n">Estatísticas</span> <span class="n">ao</span> <span class="n">lado</span>
+<span class="o">-</span> <span class="s2">&quot;Mova um ponto&quot;</span> <span class="o">-</span> <span class="n">veja</span> <span class="n">como</span> <span class="n">muda</span> <span class="n">mediana</span><span class="p">,</span> <span class="n">quartis</span><span class="p">,</span> <span class="n">IQR</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="visualizacao-e-exploracao-de-dados">
+<h2>2. VISUALIZAÇÃO E EXPLORAÇÃO DE DADOS<a class="headerlink" href="#visualizacao-e-exploracao-de-dados" title="Link to this heading">#</a></h2>
+<section id="situacao-atual">
+<h3>Situação Atual<a class="headerlink" href="#situacao-atual" title="Link to this heading">#</a></h3>
+<p>Muitos materiais tratam gráficos como apêndice visual ao invés de ferramental de análise.</p>
+</section>
+<section id="recomendacoes">
+<h3>Recomendações<a class="headerlink" href="#recomendacoes" title="Link to this heading">#</a></h3>
+<p><strong>2.1 Expandir Seção sobre Escolha de Gráficos</strong></p>
+<p>Crie uma matriz estruturada: “Qual gráfico usar?”</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Pergunta</p></th>
+<th class="head text-left"><p>Tipo de Dados</p></th>
+<th class="head text-left"><p>Gráfico Recomendado</p></th>
+<th class="head text-left"><p>Por quê?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Distribuição de uma variável contínua?</p></td>
+<td class="text-left"><p>Contínua</p></td>
+<td class="text-left"><p>Histograma, Densidade</p></td>
+<td class="text-left"><p>Ver forma, bimodalidade, outliers<a class="footnote-reference brackets" href="#id117" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Comparar distribuições entre grupos?</p></td>
+<td class="text-left"><p>Cat + Contínua</p></td>
+<td class="text-left"><p>Box plot, Violin plot</p></td>
+<td class="text-left"><p>Comparação visual de medianas, dispersão<a class="footnote-reference brackets" href="#id117" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Relação entre duas contínuas?</p></td>
+<td class="text-left"><p>Contínua, Contínua</p></td>
+<td class="text-left"><p>Scatter + linha de regressão</p></td>
+<td class="text-left"><p>Ver correlação, linearidade, outliers<a class="footnote-reference brackets" href="#id117" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Proporções de categorias?</p></td>
+<td class="text-left"><p>Categórica</p></td>
+<td class="text-left"><p>Gráfico de barras, Pizza (com cuidado)</p></td>
+<td class="text-left"><p>Composição; pizza só se ≤3 categorias<a class="footnote-reference brackets" href="#id118" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Série temporal?</p></td>
+<td class="text-left"><p>Temporal</p></td>
+<td class="text-left"><p>Linha</p></td>
+<td class="text-left"><p>Tendência, sazonalidade, mudanças abruptas<a class="footnote-reference brackets" href="#id119" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>2.2 Integrar Visualizações Interativas</strong></p>
+<p>Adicione exemplos práticos com Plotly/Bokeh (R ou Python):</p>
+<ul class="simple">
+<li><p>Gráficos dinâmicos que permitem exploração</p></li>
+<li><p>“Passe o mouse” para ver valores exatos</p></li>
+<li><p>Filtros para subgrupos</p></li>
+<li><p>Zoom em regiões de interesse</p></li>
+</ul>
+<p><strong>Exemplo Prático:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dashboard interativo: Vendas por região, tempo</span>
+<span class="c1"># - Eixo X: Meses</span>
+<span class="c1"># - Eixo Y: Vendas (em reais)</span>
+<span class="c1"># - Cores: Diferentes regiões</span>
+<span class="c1"># - Hover: Valor exato, % variação</span>
+<span class="c1"># - Botão: Toggle para ver média vs. individual</span>
+</pre></div>
+</div>
+<p><strong>2.3 Adicionar Seção sobre Comunicação com Dados</strong></p>
+<p>Ensine storytelling visual:</p>
+<ul class="simple">
+<li><p>Sequência de gráficos que contam uma história<a class="footnote-reference brackets" href="#id118" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p></li>
+<li><p>Uso de cor, tamanho, posição para direcionar atenção<a class="footnote-reference brackets" href="#id120" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id118" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p></li>
+<li><p>Títulos e labels descritivos (não “Figura 1”, mas “Vendas aumentaram 23% em Q2 2024 vs. Q1”)</p></li>
+<li><p>Quando usar anotações, setas, highlights</p></li>
+</ul>
+<p><strong>Adição Recomendada:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Exemplo: &quot;Análise de Retenção de Clientes&quot;
+Gráfico 1: Linha temporal de churn rate (tendência)
+Gráfico 2: Cohort analysis - retenção por mês de aquisição
+Gráfico 3: Segmentação - retenção por tipo de cliente
+Narrativa: Problema → Causa provável → Ação recomendada
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="probabilidade-e-distribuicoes">
+<h2>3. PROBABILIDADE E DISTRIBUIÇÕES<a class="headerlink" href="#probabilidade-e-distribuicoes" title="Link to this heading">#</a></h2>
+<section id="id17">
+<h3>Situação Atual<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<p>Distribuições são frequentemente apresentadas como funções abstratas com pouco contexto prático.</p>
+</section>
+<section id="id18">
+<h3>Recomendações<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<p><strong>3.1 Conectar Distribuições a Fenômenos Reais</strong></p>
+<p>Expanda cada distribuição com:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Distribuição</p></th>
+<th class="head text-left"><p>Fenômeno Real</p></th>
+<th class="head text-left"><p>Parâmetros Típicos</p></th>
+<th class="head text-left"><p>Quando Usar</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Binomial</strong></p></td>
+<td class="text-left"><p># sucessos em n tentativas (conversão em e-commerce, taxa de defeitos)</p></td>
+<td class="text-left"><p>n = 1000 visitas, p = 0.02 (2% conversão)</p></td>
+<td class="text-left"><p>Dados binários repetidos; pressupostos: independência</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Normal</strong></p></td>
+<td class="text-left"><p>Altura em população, erros de medição, retorno de ações</p></td>
+<td class="text-left"><p>μ = 1.7m, σ = 0.1m</p></td>
+<td class="text-left"><p>Processos naturais; erros aleatórios</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Poisson</strong></p></td>
+<td class="text-left"><p># eventos em intervalo fixo (chamadas por minuto, cliques por segundo, defeitos por lote)</p></td>
+<td class="text-left"><p>λ = 5 chamadas/min</p></td>
+<td class="text-left"><p>Eventos raros; taxa constante</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Exponencial</strong></p></td>
+<td class="text-left"><p>Tempo até próximo evento (tempo entre falhas, vida útil)</p></td>
+<td class="text-left"><p>λ = 0.1 (5 anos médios)</p></td>
+<td class="text-left"><p>Tempos; sem memória</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Uniforme</strong></p></td>
+<td class="text-left"><p>Resultado em lançamento de dados, escolha aleatória</p></td>
+<td class="text-left"><p>min = 1, max = 6</p></td>
+<td class="text-left"><p>Quando todos resultados equally likely</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>3.2 Simular Distribuições</strong></p>
+<p>Adicione código comentado para gerar e visualizar:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo: Distribuição Binomial</span>
+<span class="c1"># Cenário: Landing page com 2% CTR; 1000 visitas/dia</span>
+<span class="c1"># Pergunta: Quantas conversões esperar? Variação?</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">n_trials</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># visitas</span>
+<span class="n">p_success</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># taxa de conversão</span>
+<span class="n">n_simulations</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="n">conversions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n_trials</span><span class="p">,</span> <span class="n">p_success</span><span class="p">,</span> <span class="n">n_simulations</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">conversions</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">conversions</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Média: </span><span class="si">{</span><span class="n">conversions</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Número de Conversões&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequência&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribuição de Conversões (1000 visitas, 2% taxa)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Interpretação: 95% das vezes, esperamos entre X e Y conversões</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intervalo de 95%: [</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">conversions</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">)</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">conversions</span><span class="p">,</span><span class="w"> </span><span class="mf">97.5</span><span class="p">)</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>3.3 Expandir Teorema do Limite Central com Aplicação</strong></p>
+<p>Adicione simulação prática:</p>
+<ul class="simple">
+<li><p>Gere amostras de distribuição não-normal (ex: Poisson)</p></li>
+<li><p>Mostre que média das amostras se torna normal conforme n aumenta</p></li>
+<li><p>Explique por que isso é importante: permite usar testes paramétricos mesmo com dados não-normais</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="inferencia-estatistica-intervalo-de-confianca">
+<h2>4. INFERÊNCIA ESTATÍSTICA: INTERVALO DE CONFIANÇA<a class="headerlink" href="#inferencia-estatistica-intervalo-de-confianca" title="Link to this heading">#</a></h2>
+<section id="id19">
+<h3>Situação Atual<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<p>Intervalos de confiança são frequentemente apresentados como “fórmula para calcular” sem compreensão conceitual do que significam.</p>
+</section>
+<section id="id20">
+<h3>Recomendações<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<p><strong>4.1 Redefinir Intervalo de Confiança com Visualização Dinâmica</strong></p>
+<p><strong>Conceitual:</strong>
+Intervalo de confiança (95%) é um intervalo que, se repetirmos o experimento muitas vezes, 95% dos intervalos calculados conterão o verdadeiro parâmetro populacional.</p>
+<p><strong>Adição Visual Recomendada:</strong></p>
+<ul class="simple">
+<li><p>Simulação: Amostrar 100 vezes de uma população conhecida</p></li>
+<li><p>Para cada amostra, calcular IC 95%</p></li>
+<li><p>Plotar todos os 100 intervalos como linhas horizontais</p></li>
+<li><p>Marcar em vermelho aqueles que NÃO cobrem o parâmetro verdadeiro (~5%)</p></li>
+<li><p>Mostrar que é o procedimento que é 95% confiável, não o intervalo individual</p></li>
+</ul>
+<p><strong>Código Ilustrativo:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># População conhecida: Normal com μ=100, σ=15</span>
+<span class="n">mu_true</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">sample_size</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu_true</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">sample_size</span><span class="p">)</span>
+    <span class="n">se</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span>
+    <span class="n">ci_lower</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="mf">1.96</span> <span class="o">*</span> <span class="n">se</span>
+    <span class="n">ci_upper</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">+</span> <span class="mf">1.96</span> <span class="o">*</span> <span class="n">se</span>
+    
+    <span class="c1"># Cor: verde se cobre μ_true, vermelho senão</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span> <span class="k">if</span> <span class="n">ci_lower</span> <span class="o">&lt;=</span> <span class="n">mu_true</span> <span class="o">&lt;=</span> <span class="n">ci_upper</span> <span class="k">else</span> <span class="s1">&#39;red&#39;</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">ci_lower</span><span class="p">,</span> <span class="n">ci_upper</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">mu_true</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Parâmetro Verdadeiro&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Número da Amostra&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;100 Intervalos de Confiança 95%</span><span class="se">\n</span><span class="s1">(~95 em verde; ~5 em vermelho)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>4.2 Comparar IC com P-Valor</strong></p>
+<p>Tabela de vantagens:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Aspecto</p></th>
+<th class="head text-left"><p>Intervalo de Confiança</p></th>
+<th class="head text-left"><p>P-Valor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Interpretação</strong></p></td>
+<td class="text-left"><p>Plausível intervalo para parâmetro</p></td>
+<td class="text-left"><p>Força evidência contra H₀</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Informação</strong></p></td>
+<td class="text-left"><p>Magnitude + incerteza</p></td>
+<td class="text-left"><p>Apenas significância</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Decisão</strong></p></td>
+<td class="text-left"><p>IC não cruza zero? Significante</p></td>
+<td class="text-left"><p>P &lt; 0.05? Significante</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Quando usar</strong></p></td>
+<td class="text-left"><p>Sempre (primário)</p></td>
+<td class="text-left"><p>Suplementar</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Limitações</strong></p></td>
+<td class="text-left"><p>Requer poder adequado</p></td>
+<td class="text-left"><p>Sensível a n; p-hacking</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Recomendação:</strong> Sempre relatar IC; use p-valor como suplemento, não como decisão final</p>
+<p><strong>4.3 Adicionar Seção sobre Tamanho de Amostra</strong></p>
+<p>Explique relação entre:</p>
+<ul class="simple">
+<li><p>Tamanho de amostra (n)</p></li>
+<li><p>Largura do IC</p></li>
+<li><p>Precisão desejada</p></li>
+</ul>
+<p>Fórmula simplificada e visualização:</p>
+<ul class="simple">
+<li><p>IC de 95% para proporção: IC = p ± 1.96√(p(1-p)/n)</p></li>
+<li><p>Quanto maior n, mais estreito IC</p></li>
+<li><p>Mostre graficamente como IC fica mais estreito com n crescente</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="testes-de-hipotese-reframing-critico">
+<h2>5. TESTES DE HIPÓTESE: REFRAMING CRÍTICO<a class="headerlink" href="#testes-de-hipotese-reframing-critico" title="Link to this heading">#</a></h2>
+<section id="situacao-atual-problema-major">
+<h3>Situação Atual (Problema Majör)<a class="headerlink" href="#situacao-atual-problema-major" title="Link to this heading">#</a></h3>
+<p>Testes de hipótese são geralmente ensinados com ênfase em “rejeitar/aceitar H₀ se p &lt; 0.05”, perpetuando equívocos.</p>
+</section>
+<section id="recomendacoes-estruturantes">
+<h3>Recomendações Estruturantes<a class="headerlink" href="#recomendacoes-estruturantes" title="Link to this heading">#</a></h3>
+<p><strong>5.1 Reconstruir a Lógica do Teste de Hipótese</strong></p>
+<p>Sequência Recomendada:</p>
+<ol class="arabic simple">
+<li><p><strong>Questão de Pesquisa:</strong> “O novo algoritmo é mais rápido que o anterior?”</p></li>
+<li><p><strong>Hipóteses:</strong></p>
+<ul class="simple">
+<li><p>H₀: Tempo médio = tempo anterior (sem diferença)</p></li>
+<li><p>H₁: Tempo médio ≠ tempo anterior (tem diferença)</p></li>
+</ul>
+</li>
+<li><p><strong>Suposição:</strong> Assumir H₀ é verdadeira</p></li>
+<li><p><strong>Cálculo:</strong> Se H₀ fosse verdadeira, quão provável seria observar dados tão extremos?</p></li>
+<li><p><strong>P-valor:</strong> Essa probabilidade</p></li>
+<li><p><strong>Interpretação:</strong></p>
+<ul class="simple">
+<li><p>P baixo (&lt; 0.05)? Dados são improvável sob H₀ → evidência contra H₀</p></li>
+<li><p>P alto? Dados são consistentes com H₀ → sem evidência contra H₀</p></li>
+</ul>
+</li>
+<li><p><strong>Nota crítica:</strong> P-valor NÃO é “probabilidade de H₀ ser verdadeira”</p></li>
+</ol>
+<p><strong>5.2 Adicionar Seção sobre Erro Tipo I e Tipo II</strong></p>
+<p>Tabela 2×2 estruturada:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-left"><p>H₀ é verdadeira</p></th>
+<th class="head text-left"><p>H₀ é falsa</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Rejeitar H₀</p></td>
+<td class="text-left"><p>Erro Tipo I (α; falso positivo)</p></td>
+<td class="text-left"><p>✓ Correto (Poder = 1 - β)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Não rejeitar H₀</p></td>
+<td class="text-left"><p>✓ Correto</p></td>
+<td class="text-left"><p>Erro Tipo II (β; falso negativo)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Exemplos Práticos:</strong></p>
+<ul class="simple">
+<li><p><strong>Erro Tipo I:</strong> Aprovar droga que não funciona (prejudicial)</p></li>
+<li><p><strong>Erro Tipo II:</strong> Rejeitar droga que funciona (oportunidade perdida)</p></li>
+<li><p><strong>Trade-off:</strong> Reduzir α aumenta β; escolha baseada em contexto</p></li>
+</ul>
+<p><strong>Adição Recomendada:</strong> Visualização interativa mostrando como mudar threshold (p &lt; 0.05 vs. p &lt; 0.01) afeta Tipo I vs. Tipo II</p>
+<p><strong>5.3 Enfatizar Effect Size (Tamanho do Efeito)</strong></p>
+<p><strong>Problema:</strong> Amostras grandes produzem p &lt; 0.05 para efeitos minúsculos<a class="footnote-reference brackets" href="#id121" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id122" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a></p>
+<p><strong>Solução:</strong> SEMPRE relatar effect size</p>
+<p>Exemplo contrastante:</p>
+<ul class="simple">
+<li><p>Estudo A: N = 10 milhões, p = 0.04, Cohen’s d = 0.05 (efeito tiny)</p></li>
+<li><p>Estudo B: N = 30, p = 0.05, Cohen’s d = 0.8 (efeito large)</p></li>
+<li><p>Qual é mais importante? Estudo B!</p></li>
+</ul>
+<p><strong>Adição Recomendada:</strong></p>
+<p>Tabela de interpretação de Cohen’s d:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Cohen’s d</p></th>
+<th class="head text-left"><p>Interpretação</p></th>
+<th class="head text-left"><p>Exemplo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>0.0-0.2</p></td>
+<td class="text-left"><p>Negligenciável</p></td>
+<td class="text-left"><p>Diferença de altura em 0.5cm (população σ=5cm)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>0.2-0.5</p></td>
+<td class="text-left"><p>Pequeno</p></td>
+<td class="text-left"><p>Mudança de QI média de 100 para 102</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>0.5-0.8</p></td>
+<td class="text-left"><p>Médio</p></td>
+<td class="text-left"><p>Diferença de altura em 1.5cm (população σ=3cm)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>0.8+</p></td>
+<td class="text-left"><p>Grande</p></td>
+<td class="text-left"><p>Altura: 163cm vs. 174cm</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>5.4 P-Hacking e Múltiplas Comparações</strong></p>
+<p>Adicione seção sobre:</p>
+<ul class="simple">
+<li><p>Executar 20 testes com α = 0.05 → esperado 1 falso positivo</p></li>
+<li><p>Testes pós-hoc e correção de Bonferroni</p></li>
+<li><p>Pré-registrar análises antes de dados</p></li>
+<li><p>Replicação como validação</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="comparacao-de-grupos">
+<h2>6. COMPARAÇÃO DE GRUPOS<a class="headerlink" href="#comparacao-de-grupos" title="Link to this heading">#</a></h2>
+<section id="id23">
+<h3>Situação Atual<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<p>Testes como t-teste e ANOVA são ensinados proceduralmente sem ênfase em pressupostos.</p>
+</section>
+<section id="id24">
+<h3>Recomendações<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<p><strong>6.1 Expandir Verificação de Pressupostos</strong></p>
+<p>Para cada teste, adicione checklist:</p>
+<p><strong>Teste t de duas amostras:</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Amostras independentes? (pareadas → teste t pareado)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Dados aproximadamente normais? (verificar gráfico Q-Q, teste Shapiro-Wilk)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Variâncias aproximadamente iguais? (teste Levene)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Sem outliers extremos? (inspeção visual)</p></li>
+</ul>
+<p><strong>Se pressupostos violados:</strong>
+→ Use teste não-paramétrico: Mann-Whitney U</p>
+<p><strong>Adição Prática:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Função completa para t-teste com verificação</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">stats</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">t_test_with_checks</span><span class="p">(</span><span class="n">group1</span><span class="p">,</span> <span class="n">group2</span><span class="p">):</span>
+    <span class="c1"># 1. Normalidade</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">p_norm1</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">group1</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">p_norm2</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">group2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shapiro-Wilk p-values: </span><span class="si">{</span><span class="n">p_norm1</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">p_norm2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">p_norm1</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="ow">or</span> <span class="n">p_norm2</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ Normalidade violada em algum grupo&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># 2. Igualdade de variâncias</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">p_levene</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">levene</span><span class="p">(</span><span class="n">group1</span><span class="p">,</span> <span class="n">group2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Levene p-value: </span><span class="si">{</span><span class="n">p_levene</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">equal_var</span> <span class="o">=</span> <span class="n">p_levene</span> <span class="o">&gt;</span> <span class="mf">0.05</span>
+    
+    <span class="c1"># 3. T-teste</span>
+    <span class="n">t_stat</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">group1</span><span class="p">,</span> <span class="n">group2</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="n">equal_var</span><span class="p">)</span>
+    
+    <span class="c1"># 4. Effect size (Cohen&#39;s d)</span>
+    <span class="n">cohens_d</span> <span class="o">=</span> <span class="p">(</span><span class="n">group1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">group2</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">group1</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">group2</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">T-teste resultado:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  t = </span><span class="si">{</span><span class="n">t_stat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, p = </span><span class="si">{</span><span class="n">p_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Cohen&#39;s d = </span><span class="si">{</span><span class="n">cohens_d</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">interpret_cohen_d</span><span class="p">(</span><span class="n">cohens_d</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">t_stat</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">cohens_d</span>
+</pre></div>
+</div>
+<p><strong>6.2 Adicionar Alternativas Não-Paramétricas</strong></p>
+<p>Tabela de equivalências:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Teste Paramétrico</p></th>
+<th class="head text-left"><p>Alternativa Não-Paramétrica</p></th>
+<th class="head text-left"><p>Quando Usar</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>T-teste (2 amostras independentes)</p></td>
+<td class="text-left"><p>Mann-Whitney U</p></td>
+<td class="text-left"><p>Dados não-normais, outliers extremos, amostras pequenas</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>T-teste pareado</p></td>
+<td class="text-left"><p>Wilcoxon Signed-Rank</p></td>
+<td class="text-left"><p>Dados pareados não-normais</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>ANOVA</p></td>
+<td class="text-left"><p>Kruskal-Wallis</p></td>
+<td class="text-left"><p>Múltiplos grupos não-normais</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Correlação Pearson</p></td>
+<td class="text-left"><p>Spearman ρ</p></td>
+<td class="text-left"><p>Relação não-linear, outliers</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Adicione exemplos</strong> de quando preferir não-paramétricos mesmo sem violar pressupostos: quando n é pequeno ou distribuição é desconhecida</p>
+<p><strong>6.3 ANOVA com Decomposição de Variância</strong></p>
+<p>Explique conceito-chave que frequentemente é omitido:</p>
+<p>ANOVA decompõe variância total em:</p>
+<ul class="simple">
+<li><p>Variância <strong>entre</strong> grupos (diferenças entre médias)</p></li>
+<li><p>Variância <strong>dentro</strong> de grupos (variabilidade natural)</p></li>
+</ul>
+<p>F = Variância entre / Variância dentro</p>
+<p><strong>Visualização Recomendada:</strong></p>
+<ul class="simple">
+<li><p>Gráfico: 3 grupos com diferentes means mas mesma variabilidade</p></li>
+<li><p>Mesmo gráfico mas com variabilidade maior</p></li>
+<li><p>Mostrar como F muda; como p-value responde</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="regressao-linear">
+<h2>7. REGRESSÃO LINEAR<a class="headerlink" href="#regressao-linear" title="Link to this heading">#</a></h2>
+<section id="id25">
+<h3>Situação Atual<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
+<p>Regressão é frequentemente ensinada “aqui está a fórmula” sem ênfase em pressupostos, diagnósticos ou interpretação.</p>
+</section>
+<section id="id26">
+<h3>Recomendações<a class="headerlink" href="#id26" title="Link to this heading">#</a></h3>
+<p><strong>7.1 Expandir Seção de Diagnósticos</strong></p>
+<p>Após ajustar modelo, SEMPRE verificar:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo: Regressão simples</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># ... (ajustar modelo)</span>
+
+<span class="c1"># Residuais</span>
+<span class="n">residuals</span> <span class="o">=</span> <span class="n">y_true</span> <span class="o">-</span> <span class="n">y_pred</span>
+
+<span class="c1"># Gráfico de diagnósticos (2x2)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># 1. Residuais vs. Valores Ajustados</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">residuals</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Valores Ajustados&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Residuais&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Residuais vs. Ajustados</span><span class="se">\n</span><span class="s1">(deve ser aleatório, sem padrão)&#39;</span><span class="p">)</span>
+
+<span class="c1"># 2. Q-Q Plot (normalidade)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">residuals</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="s2">&quot;norm&quot;</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Q-Q Plot</span><span class="se">\n</span><span class="s1">(pontos na linha = normalidade)&#39;</span><span class="p">)</span>
+
+<span class="c1"># 3. Scale-Location (homoscedasticidade)</span>
+<span class="n">standardized_residuals</span> <span class="o">=</span> <span class="n">residuals</span> <span class="o">/</span> <span class="n">residuals</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">standardized_residuals</span><span class="p">)))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Valores Ajustados&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;√|Residuais Padronizados|&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Scale-Location</span><span class="se">\n</span><span class="s1">(linha plana = homocedasticidade)&#39;</span><span class="p">)</span>
+
+<span class="c1"># 4. Residuais vs. Leverage (influência)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.graphics.gofplots</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProbPlot</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">residuals</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Residuais&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frequência&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribuição de Residuais</span><span class="se">\n</span><span class="s1">(deve ser aproximadamente normal)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Interpretação:</strong></p>
+<ul class="simple">
+<li><p><strong>Residuais vs. Ajustados:</strong> Nuvem aleatória indica bom modelo; padrão indica transformação necessária</p></li>
+<li><p><strong>Q-Q Plot:</strong> Pontos na linha 45° indicam normalidade</p></li>
+<li><p><strong>Scale-Location:</strong> Linha plana indica variância constante</p></li>
+<li><p><strong>Histograma:</strong> Distribuição aproximadamente normal dos residuais</p></li>
+</ul>
+<p><strong>7.2 Adicionar Seção sobre Transformações</strong></p>
+<p>Quando os diagnósticos revelam violações:</p>
+<ul class="simple">
+<li><p><strong>Heterocedasticidade (variância não-constante):</strong> Considere transformação log(y) ou √y</p></li>
+<li><p><strong>Não-linearidade:</strong> Adicione termos polinomiais, log-transformação de x</p></li>
+<li><p><strong>Outliers influentes:</strong> Investigar; remover se erro de medição, manter se legítimo</p></li>
+</ul>
+<p><strong>Código Ilustrativo:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dados com heterocedasticidade</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># Variância cresce com X</span>
+
+<span class="c1"># Modelo sem transformação</span>
+<span class="n">model1</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">y_pred1</span> <span class="o">=</span> <span class="n">model1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Modelo com log-transformação</span>
+<span class="n">y_log</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">model2</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y_log</span><span class="p">)</span>
+<span class="n">y_pred_log</span> <span class="o">=</span> <span class="n">model2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Comparar diagnósticos...</span>
+</pre></div>
+</div>
+<p><strong>7.3 Regressão Múltipla: Multicolinearidade</strong></p>
+<p>Adicione conceito crítico frequentemente omitido:</p>
+<p><strong>Multicolinearidade:</strong> Quando preditores são altamente correlacionados</p>
+<p><strong>Problemas:</strong></p>
+<ul class="simple">
+<li><p>Coeficientes instáveis (mudanças grandes com pequenas mudanças em dados)</p></li>
+<li><p>Erros padrão inflados</p></li>
+<li><p>Testes t não confiáveis</p></li>
+</ul>
+<p><strong>Detecção:</strong></p>
+<ul class="simple">
+<li><p>Matriz de correlação entre preditores</p></li>
+<li><p>Fator de Inflação da Variância (VIF)</p></li>
+<li><p>VIF &gt; 10 é problemático; VIF &gt; 5 preocupante</p></li>
+</ul>
+<p><strong>Solução:</strong></p>
+<ul class="simple">
+<li><p>Remover um dos preditores correlacionados</p></li>
+<li><p>Combinar preditores correlacionados</p></li>
+<li><p>Usar regularização (Ridge, Lasso)</p></li>
+</ul>
+<p><strong>Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular VIF</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.outliers_influence</span><span class="w"> </span><span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">^</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">vif</span> <span class="o">=</span> <span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;VIF da variável </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">vif</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>7.4 Interpretação de Coeficientes em Regressão Múltipla</strong></p>
+<p><strong>Nota crítica:</strong> Coeficiente de X₁ é interpretado <strong>mantendo outras variáveis constantes</strong> (“ceteris paribus”)</p>
+<p>Exemplo:</p>
+<ul class="simple">
+<li><p>Preço = 100 + 50×Metragem + 10×Quartos + 5×Idade</p></li>
+<li><p>Interpretação: A cada metro quadrado adicional, preço aumenta 50 (mil reais), <strong>mantendo quartos e idade constantes</strong></p></li>
+</ul>
+<p><strong>Adição Recomendada:</strong> Discussão sobre quando essa interpretação é válida vs. quando preditores colindam</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="introduzir-effect-size-e-significancia-pratica">
+<h2>8. INTRODUZIR: EFFECT SIZE E SIGNIFICÂNCIA PRÁTICA<a class="headerlink" href="#introduzir-effect-size-e-significancia-pratica" title="Link to this heading">#</a></h2>
+<section id="id27">
+<h3>Situação Atual<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<p>Frequentemente ausente ou superficial.</p>
+</section>
+<section id="id28">
+<h3>Recomendações<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
+<p><strong>8.1 Seção Dedicada: Do Estatístico para o Prático</strong></p>
+<p>A magnitude importa. Exemplo:</p>
+<p><strong>Estudo A:</strong> Novo medicamento reduz pressão arterial média de 150 para 148 mmHg (p = 0.001, n = 5000)</p>
+<ul class="simple">
+<li><p>Significante estatisticamente ✓</p></li>
+<li><p>Clinicamente importante? Discutível (2 mmHg de redução)</p></li>
+</ul>
+<p><strong>Estudo B:</strong> Novo medicamento reduz pressão de 150 para 140 mmHg (p = 0.08, n = 25)</p>
+<ul class="simple">
+<li><p>Não significante estatisticamente ✗</p></li>
+<li><p>Clinicamente importante? Sim (10 mmHg; pode impactar saúde)</p></li>
+</ul>
+<p><strong>Lição:</strong> Significância estatística ≠ Importância prática</p>
+<p><strong>8.2 Sempre Relatar Effect Size</strong></p>
+<p>Crie template para relatório:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Resultado</span><span class="p">:</span> <span class="n">Grupo</span> <span class="n">A</span> <span class="p">(</span><span class="n">M</span> <span class="o">=</span> <span class="mf">45.2</span><span class="p">,</span> <span class="n">SD</span> <span class="o">=</span> <span class="mf">8.3</span><span class="p">)</span> <span class="n">diferiu</span> <span class="n">significativamente</span> 
+<span class="n">de</span> <span class="n">Grupo</span> <span class="n">B</span> <span class="p">(</span><span class="n">M</span> <span class="o">=</span> <span class="mf">41.6</span><span class="p">,</span> <span class="n">SD</span> <span class="o">=</span> <span class="mf">7.9</span><span class="p">),</span> <span class="n">t</span><span class="p">(</span><span class="mi">98</span><span class="p">)</span> <span class="o">=</span> <span class="mf">2.3</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mf">0.021</span><span class="o">.</span>
+
+<span class="n">Effect</span> <span class="n">size</span> <span class="p">(</span><span class="n">Cohen</span><span class="s1">&#39;s d = 0.46) indica efeito pequeno-a-médio.</span>
+
+<span class="n">Interpretação</span><span class="p">:</span> <span class="n">Embora</span> <span class="n">estatisticamente</span> <span class="n">significante</span><span class="p">,</span> <span class="n">o</span> <span class="n">efeito</span> 
+<span class="n">é</span> <span class="n">pequeno</span><span class="o">.</span> <span class="n">Replicação</span> <span class="n">com</span> <span class="n">amostra</span> <span class="n">maior</span> <span class="n">recomendada</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>8.3 Intervalo de Confiança para Effect Size</strong></p>
+<p>Além de estimar effect size, calcule IC:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># IC 95% para Cohen&#39;s d</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># Simulação de bootstrap para IC</span>
+<span class="n">effect_sizes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="n">sample1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">group1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">group1</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">sample2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">group2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">group2</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">cohens_d</span><span class="p">(</span><span class="n">sample1</span><span class="p">,</span> <span class="n">sample2</span><span class="p">)</span>
+    <span class="n">effect_sizes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">ci_lower</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">effect_sizes</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
+<span class="n">ci_upper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">effect_sizes</span><span class="p">,</span> <span class="mf">97.5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cohen&#39;s d = </span><span class="si">{</span><span class="n">cohens_d</span><span class="p">(</span><span class="n">group1</span><span class="p">,</span><span class="w"> </span><span class="n">group2</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, IC 95% = [</span><span class="si">{</span><span class="n">ci_lower</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">ci_upper</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="novo-topico-analise-causal-essencial-para-dados-observacionais">
+<h2>9. NOVO TÓPICO: ANÁLISE CAUSAL (ESSENCIAL PARA DADOS OBSERVACIONAIS)<a class="headerlink" href="#novo-topico-analise-causal-essencial-para-dados-observacionais" title="Link to this heading">#</a></h2>
+<section id="id29">
+<h3>Situação Atual<a class="headerlink" href="#id29" title="Link to this heading">#</a></h3>
+<p>Raramente coberto em materiais aplicados; crítico para profissional.</p>
+</section>
+<section id="id30">
+<h3>Recomendações<a class="headerlink" href="#id30" title="Link to this heading">#</a></h3>
+<p><strong>9.1 Introduzir Diagramas Acíclicos Dirigidos (DAGs)</strong></p>
+<p><strong>Conceito:</strong> Visualize relações causais presumidas antes de análise</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Exemplo: Efeito de Marketing em Vendas
+
+Marketing → Vendas
+    ↓
+  Sazonalidade
+
+Interpretação: 
+- Marketing afeta Vendas (causal)
+- Sazonalidade confunde (afeta ambas)
+- Deve-se controlar por Sazonalidade
+</pre></div>
+</div>
+<p><strong>Adição:</strong> Software/ferramenta para desenhar DAGs (ex: <a class="reference external" href="http://dagitty.net">dagitty.net</a>); incluir exemplos</p>
+<p><strong>9.2 Confundimento (Confounding)</strong></p>
+<p><strong>Definição:</strong> Variável que afeta tanto exposição quanto resultado</p>
+<p><strong>Exemplo Real:</strong></p>
+<ul class="simple">
+<li><p>Pergunta: Beber café causa doença cardíaca?</p></li>
+<li><p>Confundidor: Fumar (correlacionado com beber café E com doença cardíaca)</p></li>
+<li><p>Solução: Controlar por fumo</p></li>
+</ul>
+<p><strong>Visualização:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sem controle: Correlação entre Café e Doença = 0.15 (aparentement causal)
+Com controle por Fumo: Correlação entre Café e Doença = 0.02 (spurious!)
+</pre></div>
+</div>
+<p><strong>9.3 Adicionar: Propensity Score Matching (PSM)</strong></p>
+<p>Para dados observacionais quando experimentação impossível:</p>
+<p><strong>Ideia:</strong> Criar “quasi-experimento” emparelhando observações similares entre grupos</p>
+<p><strong>Passo a passo simplificado:</strong></p>
+<ol class="arabic simple">
+<li><p>Modelar probabilidade de estar no grupo tratamento (propensity score)</p></li>
+<li><p>Emparelar indivíduos com propensity scores similares entre grupos</p></li>
+<li><p>Comparar resultado entre grupos pareados</p></li>
+</ol>
+<p><strong>Código Simples:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial.distance</span><span class="w"> </span><span class="kn">import</span> <span class="n">cdist</span>
+
+<span class="c1"># Calcular propensity score P(Tratamento | Covariáveis)</span>
+<span class="n">propensity_scores</span> <span class="o">=</span> <span class="n">logistic_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">covariables</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Emparelar tratados com controles de propensity score similar</span>
+<span class="n">treated</span> <span class="o">=</span> <span class="n">propensity_scores</span><span class="p">[</span><span class="n">treatment</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">control</span> <span class="o">=</span> <span class="n">propensity_scores</span><span class="p">[</span><span class="n">treatment</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">matched_pairs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">t_score</span> <span class="ow">in</span> <span class="n">treated</span><span class="p">:</span>
+    <span class="c1"># Encontrar controle mais próximo</span>
+    <span class="n">distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">control</span> <span class="o">-</span> <span class="n">t_score</span><span class="p">)</span>
+    <span class="n">closest_control_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+    <span class="n">matched_pairs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">t_score</span><span class="p">,</span> <span class="n">control</span><span class="p">[</span><span class="n">closest_control_idx</span><span class="p">]))</span>
+
+<span class="c1"># Calcular efeito de tratamento em amostra pareada</span>
+<span class="n">effect</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">[</span><span class="n">treatment</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">outcome_matched</span><span class="p">[</span><span class="n">control</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="novo-topico-bayesian-statistics-crescentemente-padrao">
+<h2>10. NOVO TÓPICO: BAYESIAN STATISTICS (CRESCENTEMENTE PADRÃO)<a class="headerlink" href="#novo-topico-bayesian-statistics-crescentemente-padrao" title="Link to this heading">#</a></h2>
+<section id="id31">
+<h3>Situação Atual<a class="headerlink" href="#id31" title="Link to this heading">#</a></h3>
+<p>Frequentemente omitido ou tratado como “opcional avançado”.</p>
+</section>
+<section id="id32">
+<h3>Recomendações<a class="headerlink" href="#id32" title="Link to this heading">#</a></h3>
+<p><strong>10.1 Introduzir Conceito Fundamental</strong></p>
+<p><strong>Frequentist vs. Bayesian:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Aspecto</p></th>
+<th class="head text-left"><p>Frequentist</p></th>
+<th class="head text-left"><p>Bayesian</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Probabilidade</strong></p></td>
+<td class="text-left"><p>Frequência de longo prazo</p></td>
+<td class="text-left"><p>Crença/incerteza subjetiva</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Parâmetro</strong></p></td>
+<td class="text-left"><p>Fixo (desconhecido)</p></td>
+<td class="text-left"><p>Aleatório (incerteza)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>P-valor</strong></p></td>
+<td class="text-left"><p>P(dados | H₀)</p></td>
+<td class="text-left"><p>P(H₀ | dados) ← mais intuitivo!</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Prévia</strong></p></td>
+<td class="text-left"><p>Não</p></td>
+<td class="text-left"><p>Sim (informação anterior)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Atualização</strong></p></td>
+<td class="text-left"><p>Não incorpora nova informação</p></td>
+<td class="text-left"><p>Incorpora novos dados via Bayes</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Interpretação</strong></p></td>
+<td class="text-left"><p>“Se experimento repetido …”</p></td>
+<td class="text-left"><p>“Dado dados, crença é …”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>10.2 Teorema de Bayes Explicado Intuitivamente</strong></p>
+<p>P(Hipótese | Dados) = P(Dados | Hipótese) × P(Hipótese) / P(Dados)</p>
+<p>Que significa:</p>
+<ul class="simple">
+<li><p><strong>Posterior</strong> (P(H|D)): O que acreditamos após dados</p></li>
+<li><p><strong>Likelihood</strong> (P(D|H)): Como provável é observar dados se H verdadeira</p></li>
+<li><p><strong>Prior</strong> (P(H)): O que acreditávamos antes</p></li>
+<li><p><strong>Evidence</strong> (P(D)): Probabilidade geral dos dados</p></li>
+</ul>
+<p><strong>Exemplo Intuitivo: Teste de Doença</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Pregunta: Pessoa fez teste positivo. Tem doença?
+
+Dados:
+- Teste tem 95% sensibilidade (95% dos doentes testam +)
+- Teste tem 90% especificidade (90% dos não-doentes testam -)
+- Doença é rara: 0.1% população
+
+Análise:
+P(Doença | Teste+) = P(Teste+ | Doença) × P(Doença) / P(Teste+)
+                   = 0.95 × 0.001 / P(Teste+)
+                   
+Calcular P(Teste+):
+= P(Teste+ | Doença) × P(Doença) + P(Teste+ | Não-Doença) × P(Não-Doença)
+= 0.95 × 0.001 + 0.10 × 0.999
+= 0.000950 + 0.0999
+= 0.1009
+
+Logo:
+P(Doença | Teste+) = (0.95 × 0.001) / 0.1009 = 0.0094 ≈ 0.9%
+
+Interpretação: Apenas 0.9% de chance de ter doença! (Ao invés de 95% que muitos assumem)
+Razão: Doença é tão rara que falsos positivos superam verdadeiros positivos
+</pre></div>
+</div>
+<p><strong>10.3 Aplicação Prática: A/B Testing Bayesiano</strong></p>
+<p><strong>Cenário:</strong> Landing page variant A vs. B; qual é melhor?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bayesian approach: Qual é probabilidade de B ser melhor que A?</span>
+<span class="c1"># (vs. frequentist: p-valor apenas diz se há diferença)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pymc3</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Dados</span>
+<span class="n">visitors_A</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">conversions_A</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">visitors_B</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">conversions_B</span> <span class="o">=</span> <span class="mi">65</span>
+
+<span class="k">with</span> <span class="n">pm</span><span class="o">.</span><span class="n">Model</span><span class="p">()</span> <span class="k">as</span> <span class="n">model</span><span class="p">:</span>
+    <span class="c1"># Priors (Beta distributions; 0.5 conversão média)</span>
+    <span class="n">p_A</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Beta</span><span class="p">(</span><span class="s1">&#39;p_A&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">p_B</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Beta</span><span class="p">(</span><span class="s1">&#39;p_B&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Likelihood (dados observados)</span>
+    <span class="n">obs_A</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Binomial</span><span class="p">(</span><span class="s1">&#39;obs_A&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">visitors_A</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_A</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">conversions_A</span><span class="p">)</span>
+    <span class="n">obs_B</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Binomial</span><span class="p">(</span><span class="s1">&#39;obs_B&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">visitors_B</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_B</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">conversions_B</span><span class="p">)</span>
+    
+    <span class="c1"># Sample posterior</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="n">return_inferencedata</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Calcular P(p_B &gt; p_A | dados)</span>
+<span class="n">posterior_samples</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">posterior</span>
+<span class="n">prob_B_better</span> <span class="o">=</span> <span class="p">(</span><span class="n">posterior_samples</span><span class="p">[</span><span class="s1">&#39;p_B&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">posterior_samples</span><span class="p">[</span><span class="s1">&#39;p_A&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probabilidade de B ser melhor: </span><span class="si">{</span><span class="n">prob_B_better</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Diferença esperada</span>
+<span class="n">diff_expected</span> <span class="o">=</span> <span class="p">(</span><span class="n">posterior_samples</span><span class="p">[</span><span class="s1">&#39;p_B&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">posterior_samples</span><span class="p">[</span><span class="s1">&#39;p_A&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Diferença esperada de taxa de conversão: </span><span class="si">{</span><span class="n">diff_expected</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Intervalo de credibilidade (direto; interpretável como intervalo de confiança)</span>
+<span class="n">ci_p_B</span> <span class="o">=</span> <span class="n">posterior_samples</span><span class="p">[</span><span class="s1">&#39;p_B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.975</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Taxa de conversão B (95% credible): </span><span class="si">{</span><span class="n">ci_p_B</span><span class="p">[</span><span class="o">^</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">ci_p_B</span><span class="p">[</span><span class="o">^</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Vantagens:</strong></p>
+<ul class="simple">
+<li><p>Responde diretamente pergunta de interesse: “P(B &gt; A | dados)”</p></li>
+<li><p>Permite parada antecipada quando evidência clara</p></li>
+<li><p>Incorpora conhecimento prévio naturalmente</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="novo-topico-metodos-nao-parametricos">
+<h2>11. NOVO TÓPICO: MÉTODOS NÃO-PARAMÉTRICOS<a class="headerlink" href="#novo-topico-metodos-nao-parametricos" title="Link to this heading">#</a></h2>
+<section id="id33">
+<h3>Situação Atual<a class="headerlink" href="#id33" title="Link to this heading">#</a></h3>
+<p>Frequentemente limitado a “use se não-normal”.</p>
+</section>
+<section id="id34">
+<h3>Recomendações<a class="headerlink" href="#id34" title="Link to this heading">#</a></h3>
+<p><strong>11.1 Quando e Por Quê Usar Não-Paramétricos</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Método Paramétrico</p></th>
+<th class="head text-left"><p>Não-Paramétrico</p></th>
+<th class="head text-left"><p>Vantagens Não-Param</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>T-teste</p></td>
+<td class="text-left"><p>Mann-Whitney U</p></td>
+<td class="text-left"><p>Sem pressupostos; ranks robustos a outliers</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>T-teste pareado</p></td>
+<td class="text-left"><p>Wilcoxon Signed-Rank</p></td>
+<td class="text-left"><p>Sem pressupostos; dados pareados</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Pearson r</p></td>
+<td class="text-left"><p>Spearman ρ</p></td>
+<td class="text-left"><p>Relações não-lineares OK; ranks robustos</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>ANOVA</p></td>
+<td class="text-left"><p>Kruskal-Wallis</p></td>
+<td class="text-left"><p>Múltiplos grupos sem normalidade</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Linear Regression</p></td>
+<td class="text-left"><p>LOESS, Splines</p></td>
+<td class="text-left"><p>Flexível; sem pressupostos de forma</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>11.2 Exemplo: Bootstrap para IC sem Pressupostos</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">bootstrap_ci</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n_bootstrap</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="mi">95</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Intervalo de confiança via bootstrap (nenhum pressuposto!)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bootstrap_means</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_bootstrap</span><span class="p">):</span>
+        <span class="c1"># Reamostragem com reposição</span>
+        <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">bootstrap_means</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    
+    <span class="c1"># IC percentil</span>
+    <span class="n">lower</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootstrap_means</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="n">ci</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootstrap_means</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="o">+</span><span class="n">ci</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span>
+
+<span class="c1"># Uso</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>  <span class="c1"># Com outlier</span>
+<span class="n">ci_lower</span><span class="p">,</span> <span class="n">ci_upper</span> <span class="o">=</span> <span class="n">bootstrap_ci</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;IC 95%: [</span><span class="si">{</span><span class="n">ci_lower</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">ci_upper</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Vantagem:</strong> Funciona para QUALQUER distribuição; não requer fórmulas específicas</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="reprodutibilidade-e-boas-praticas">
+<h2>12. REPRODUTIBILIDADE E BOAS PRÁTICAS<a class="headerlink" href="#reprodutibilidade-e-boas-praticas" title="Link to this heading">#</a></h2>
+<section id="id35">
+<h3>Situação Atual<a class="headerlink" href="#id35" title="Link to this heading">#</a></h3>
+<p>Raramente enfatizado em materiais de ensino.</p>
+</section>
+<section id="id36">
+<h3>Recomendações<a class="headerlink" href="#id36" title="Link to this heading">#</a></h3>
+<p><strong>12.1 Seção: Relatório Reprodutível</strong></p>
+<p>Cada análise deve incluir:</p>
+<ul class="simple">
+<li><p><strong>Dados:</strong> Identificação clara; link para download</p></li>
+<li><p><strong>Código:</strong> Comentado; reproduz todas figuras/tabelas</p></li>
+<li><p><strong>Versão de software:</strong> R 4.2.1; Python 3.10; library versions</p></li>
+<li><p><strong>Seed aleatória:</strong> set.seed(123) para replicabilidade</p></li>
+<li><p><strong>Pressupostos e limitações:</strong> O que pode estar errado?</p></li>
+</ul>
+<p><strong>Template Recomendado:</strong></p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Análise: Efeito de Marketing em Vendas</span>
+
+<span class="gu">## Dados</span>
+<span class="k">-</span><span class="w"> </span>Fonte: <span class="sb">`vendas_2024.csv`</span> (1000 obs, 5 variáveis)
+<span class="k">-</span><span class="w"> </span>Período: Jan-Dec 2024
+<span class="k">-</span><span class="w"> </span>Coleta: Sistema ERP (Fonte: SAP)
+
+<span class="gu">## Metodologia</span>
+<span class="k">1.</span> <span class="gs">**Análise descritiva:**</span> Estatísticas resumidas por região
+<span class="k">2.</span> <span class="gs">**Regressão linear:**</span> Vendas ~ Marketing + Sazonalidade + Preço
+<span class="k">3.</span> <span class="gs">**Diagnósticos:**</span> Verificar pressupostos
+
+<span class="gu">## Resultados</span>
+...
+
+<span class="gu">## Limitações</span>
+<span class="k">-</span><span class="w"> </span>Relação causal não pode ser inferida (dados observacionais)
+<span class="k">-</span><span class="w"> </span>Possível confundimento por: ...
+<span class="k">-</span><span class="w"> </span>Replicação recomendada com dados mais recentes
+
+<span class="gu">## Código</span>
+[Jupyter Notebook anexado: analysis.ipynb]
+[GitHub: github.com/user/vendas-analysis]
+</pre></div>
+</div>
+<p><strong>12.2 Versionamento de Código</strong></p>
+<p>Adicione seção sobre Git basics:</p>
+<ul class="simple">
+<li><p>Commit frequentes com mensagens descritivas</p></li>
+<li><p>Branches para experimentos</p></li>
+<li><p>README explicando estrutura de repositório</p></li>
+</ul>
+<p><strong>12.3 Documentação de Dados</strong></p>
+<p>Template data dictionary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Variável: `marketing_spend`
+- Tipo: Numérico (contínuo)
+- Unidade: Milhares de reais
+- Período: Mensal (Jan 2024 - Dec 2024)
+- Valores faltantes: 0
+- Outliers: Mês 7 (R$ 150k; investigação: campanha especial)
+- Fonte: Sistema ERP
+- Validação: Verificado contra faturas (100% match)
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="novo-topico-etica-em-analise-de-dados">
+<h2>13. NOVO TÓPICO: ÉTICA EM ANÁLISE DE DADOS<a class="headerlink" href="#novo-topico-etica-em-analise-de-dados" title="Link to this heading">#</a></h2>
+<section id="id37">
+<h3>Situação Atual<a class="headerlink" href="#id37" title="Link to this heading">#</a></h3>
+<p>Completamente ausente em muitos materiais.</p>
+</section>
+<section id="id38">
+<h3>Recomendações<a class="headerlink" href="#id38" title="Link to this heading">#</a></h3>
+<p><strong>13.1 Viés em Dados</strong></p>
+<p>Adicione exemplos de viés histórico:</p>
+<ul class="simple">
+<li><p>Dados de recrutamento refletem discriminação passada</p></li>
+<li><p>Dados de crédito: rejeitados negros historicamente → modelo aprende discriminação</p></li>
+<li><p>Dados de saúde: grupos sub-representados → generalizações falheiras</p></li>
+</ul>
+<p><strong>13.2 Transparência e Honestidade</strong></p>
+<p>Orientação prática:</p>
+<ul class="simple">
+<li><p>Relatar limitações do estudo (não esconder)</p></li>
+<li><p>Conflitos de interesse</p></li>
+<li><p>Quando há múltiplas formas de analisar, qual foi escolhida? Por quê?</p></li>
+<li><p>Qual análises foram tentadas e abandonadas?</p></li>
+</ul>
+<p><strong>13.3 Casos de Estudo</strong></p>
+<p>Exemplos reais onde análise inadequada causou danos:</p>
+<ul class="simple">
+<li><p>Algoritmo de recrutamento da Amazon (viés de gênero)</p></li>
+<li><p>Algoritmo de risco criminal COMPAS (prejudicial contra negros)</p></li>
+<li><p>Estudo de suicídio Lori (dados sensíveis publicados)</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="integracao-tecnica">
+<h2>14. INTEGRAÇÃO TÉCNICA<a class="headerlink" href="#integracao-tecnica" title="Link to this heading">#</a></h2>
+<section id="id39">
+<h3>Recomendações<a class="headerlink" href="#id39" title="Link to this heading">#</a></h3>
+<p><strong>14.1 Incluir Código Reprodutível em Múltiplas Linguagens</strong></p>
+<p>Ofereça exemplos em:</p>
+<ul class="simple">
+<li><p><strong>Python:</strong> NumPy, SciPy, Pandas, scikit-learn</p></li>
+<li><p><strong>R:</strong> base R, tidyverse, ggplot2</p></li>
+<li><p>Mostrar equivalências entre linguagens</p></li>
+</ul>
+<p><strong>14.2 Integrar Ferramentas Modernas</strong></p>
+<ul class="simple">
+<li><p><strong>Git/GitHub:</strong> Controle de versão</p></li>
+<li><p><strong>Jupyter Notebooks:</strong> Relatórios dinâmicos</p></li>
+<li><p><strong>Docker:</strong> Reprodutibilidade ambiental (opcional avançado)</p></li>
+<li><p><strong>Plotly/Bokeh:</strong> Visualizações interativas</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="estrutura-geral-recomendada">
+<h2>15. ESTRUTURA GERAL RECOMENDADA<a class="headerlink" href="#estrutura-geral-recomendada" title="Link to this heading">#</a></h2>
+<p>Reorganize o material seguindo progressão:</p>
+<ol class="arabic simple">
+<li><p><strong>Conceitos Fundamentais</strong> (tipos de dados, amostragem)</p></li>
+<li><p><strong>Exploração: EDA, Visualização</strong> (entender dados primeiro)</p></li>
+<li><p><strong>Probabilidade</strong> (fundações teóricas)</p></li>
+<li><p><strong>Inferência: IC (primário), P-valores (suplementar)</strong></p></li>
+<li><p><strong>Comparação: T-teste, ANOVA, Não-Paramétricos</strong></p></li>
+<li><p><strong>Regressão: Linear, Diagnósticos, Causalidade</strong></p></li>
+<li><p><strong>Tópicos Avançados: Bayesian, Causal Inference, Métodos Não-Param</strong></p></li>
+<li><p><strong>Boas Práticas: Reprodutibilidade, Ética, Comunicação</strong></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="resumo-executivo-de-melhorias">
+<h2>Resumo Executivo de Melhorias<a class="headerlink" href="#resumo-executivo-de-melhorias" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Tópico</p></th>
+<th class="head text-left"><p>Adição Principal</p></th>
+<th class="head text-left"><p>Impacto</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Descritivo</p></td>
+<td class="text-left"><p>Assimetria, Quartis contextualizados</p></td>
+<td class="text-left"><p>Melhor compreensão de dados</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Visualização</p></td>
+<td class="text-left"><p>Interatividade; guia de seleção de gráficos</p></td>
+<td class="text-left"><p>Exploração autônoma</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Probabilidade</p></td>
+<td class="text-left"><p>Simulações; conexão com fenômenos reais</p></td>
+<td class="text-left"><p>Intuição, não memorização</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Inferência</p></td>
+<td class="text-left"><p>IC primário; efeito-size obrigatório; p-valor secundário</p></td>
+<td class="text-left"><p>Interpretação correta</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Testes</p></td>
+<td class="text-left"><p>Pressupostos sempre verificados; alternativas não-param</p></td>
+<td class="text-left"><p>Rigor; robustez</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Regressão</p></td>
+<td class="text-left"><p>Diagnósticos completos; multicolinearidade</p></td>
+<td class="text-left"><p>Modelos confiáveis</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Novo: Causal</strong></p></td>
+<td class="text-left"><p>DAGs; confundimento; PSM</p></td>
+<td class="text-left"><p>Evitar conclusões erradas</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Novo: Bayesian</strong></p></td>
+<td class="text-left"><p>Teorema de Bayes; A/B testing</p></td>
+<td class="text-left"><p>Decisões probabilísticas diretas</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Novo: Não-param</strong></p></td>
+<td class="text-left"><p>Bootstrap; ranks; quando usar</p></td>
+<td class="text-left"><p>Flexibilidade</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Reprodutibilidade</p></td>
+<td class="text-left"><p>Template; Git; Data dict</p></td>
+<td class="text-left"><p>Confiabilidade profissional</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Ética</p></td>
+<td class="text-left"><p>Viés; casos reais</p></td>
+<td class="text-left"><p>Responsabilidade</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Este material de estudo pode evoluir de referência técnica para <strong>guia profissional abrangente</strong> incorporando:</p>
+<ol class="arabic simple">
+<li><p><strong>Claridade conceitual</strong> sobre p-valores, effect size e significância prática</p></li>
+<li><p><strong>Rigor metodológico</strong> com verificação de pressupostos e diagnósticos</p></li>
+<li><p><strong>Modernidade</strong> com métodos Bayesianos, causal inference, não-paramétricos</p></li>
+<li><p><strong>Praticidade</strong> com código reprodutível, exemplos reais, guias de decisão</p></li>
+<li><p><strong>Responsabilidade</strong> com ética, transparência e comunicação clara</p></li>
+</ol>
+<p>O material então se tornará não apenas um tutorial, mas um <strong>companheiro profissional</strong> para mestrado, doutorado e trabalho em análise de dados e pesquisa.
+<span style="display:none"><a class="footnote-reference brackets" href="#id123" id="id40" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id124" id="id41" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id125" id="id42" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id126" id="id43" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id127" id="id44" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id128" id="id45" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id129" id="id46" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id130" id="id47" role="doc-noteref"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id131" id="id48" role="doc-noteref"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id132" id="id49" role="doc-noteref"><span class="fn-bracket">[</span>23<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id133" id="id50" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id134" id="id51" role="doc-noteref"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id135" id="id52" role="doc-noteref"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id136" id="id53" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id137" id="id54" role="doc-noteref"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id138" id="id55" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id139" id="id56" role="doc-noteref"><span class="fn-bracket">[</span>30<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id140" id="id57" role="doc-noteref"><span class="fn-bracket">[</span>31<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id141" id="id58" role="doc-noteref"><span class="fn-bracket">[</span>32<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id142" id="id59" role="doc-noteref"><span class="fn-bracket">[</span>33<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id143" id="id60" role="doc-noteref"><span class="fn-bracket">[</span>34<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id144" id="id61" role="doc-noteref"><span class="fn-bracket">[</span>35<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id145" id="id62" role="doc-noteref"><span class="fn-bracket">[</span>36<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id146" id="id63" role="doc-noteref"><span class="fn-bracket">[</span>37<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id147" id="id64" role="doc-noteref"><span class="fn-bracket">[</span>38<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id148" id="id65" role="doc-noteref"><span class="fn-bracket">[</span>39<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id149" id="id66" role="doc-noteref"><span class="fn-bracket">[</span>40<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id150" id="id67" role="doc-noteref"><span class="fn-bracket">[</span>41<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id151" id="id68" role="doc-noteref"><span class="fn-bracket">[</span>42<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id152" id="id69" role="doc-noteref"><span class="fn-bracket">[</span>43<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id153" id="id70" role="doc-noteref"><span class="fn-bracket">[</span>44<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id154" id="id71" role="doc-noteref"><span class="fn-bracket">[</span>45<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id155" id="id72" role="doc-noteref"><span class="fn-bracket">[</span>46<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id156" id="id73" role="doc-noteref"><span class="fn-bracket">[</span>47<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id157" id="id74" role="doc-noteref"><span class="fn-bracket">[</span>48<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id158" id="id75" role="doc-noteref"><span class="fn-bracket">[</span>49<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id159" id="id76" role="doc-noteref"><span class="fn-bracket">[</span>50<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id160" id="id77" role="doc-noteref"><span class="fn-bracket">[</span>51<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id161" id="id78" role="doc-noteref"><span class="fn-bracket">[</span>52<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id162" id="id79" role="doc-noteref"><span class="fn-bracket">[</span>53<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id163" id="id80" role="doc-noteref"><span class="fn-bracket">[</span>54<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id164" id="id81" role="doc-noteref"><span class="fn-bracket">[</span>55<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id165" id="id82" role="doc-noteref"><span class="fn-bracket">[</span>56<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id166" id="id83" role="doc-noteref"><span class="fn-bracket">[</span>57<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id167" id="id84" role="doc-noteref"><span class="fn-bracket">[</span>58<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id168" id="id85" role="doc-noteref"><span class="fn-bracket">[</span>59<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id169" id="id86" role="doc-noteref"><span class="fn-bracket">[</span>60<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id170" id="id87" role="doc-noteref"><span class="fn-bracket">[</span>61<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id171" id="id88" role="doc-noteref"><span class="fn-bracket">[</span>62<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id172" id="id89" role="doc-noteref"><span class="fn-bracket">[</span>63<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id173" id="id90" role="doc-noteref"><span class="fn-bracket">[</span>64<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id174" id="id91" role="doc-noteref"><span class="fn-bracket">[</span>65<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id175" id="id92" role="doc-noteref"><span class="fn-bracket">[</span>66<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id176" id="id93" role="doc-noteref"><span class="fn-bracket">[</span>67<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id177" id="id94" role="doc-noteref"><span class="fn-bracket">[</span>68<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id178" id="id95" role="doc-noteref"><span class="fn-bracket">[</span>69<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id179" id="id96" role="doc-noteref"><span class="fn-bracket">[</span>70<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id180" id="id97" role="doc-noteref"><span class="fn-bracket">[</span>71<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id181" id="id98" role="doc-noteref"><span class="fn-bracket">[</span>72<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id182" id="id99" role="doc-noteref"><span class="fn-bracket">[</span>73<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id183" id="id100" role="doc-noteref"><span class="fn-bracket">[</span>74<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id184" id="id101" role="doc-noteref"><span class="fn-bracket">[</span>75<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id185" id="id102" role="doc-noteref"><span class="fn-bracket">[</span>76<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id186" id="id103" role="doc-noteref"><span class="fn-bracket">[</span>77<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id187" id="id104" role="doc-noteref"><span class="fn-bracket">[</span>78<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id188" id="id105" role="doc-noteref"><span class="fn-bracket">[</span>79<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id189" id="id106" role="doc-noteref"><span class="fn-bracket">[</span>80<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id190" id="id107" role="doc-noteref"><span class="fn-bracket">[</span>81<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id191" id="id108" role="doc-noteref"><span class="fn-bracket">[</span>82<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#id192" id="id109" role="doc-noteref"><span class="fn-bracket">[</span>83<span class="fn-bracket">]</span></a></span></p>
+<div align="center">⁂</div>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id110" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://ojs.ual.es/ojs/index.php/ESPIRAL/article/view/9570">https://ojs.ual.es/ojs/index.php/ESPIRAL/article/view/9570</a></p>
+</aside>
+<aside class="footnote brackets" id="id111" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id8">2</a>)</span>
+<p><a class="reference external" href="https://arxiv.org/pdf/1912.11436.pdf">https://arxiv.org/pdf/1912.11436.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id112" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/pdf/2410.13920.pdf">https://arxiv.org/pdf/2410.13920.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id113" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/html/2504.02427">https://arxiv.org/html/2504.02427</a></p>
+</aside>
+<aside class="footnote brackets" id="id114" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/html/2404.17705v2">https://arxiv.org/html/2404.17705v2</a></p>
+</aside>
+<aside class="footnote brackets" id="id115" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/pdf/2011.03865.pdf">https://arxiv.org/pdf/2011.03865.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id116" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5811238/">https://pmc.ncbi.nlm.nih.gov/articles/PMC5811238/</a></p>
+</aside>
+<aside class="footnote brackets" id="id117" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id9">1</a>,<a role="doc-backlink" href="#id10">2</a>,<a role="doc-backlink" href="#id11">3</a>)</span>
+<p><a class="reference external" href="https://axonpark.com/data-visualization-in-education-14-case-studies-and-statistics/">https://axonpark.com/data-visualization-in-education-14-case-studies-and-statistics/</a></p>
+</aside>
+<aside class="footnote brackets" id="id118" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id12">1</a>,<a role="doc-backlink" href="#id14">2</a>,<a role="doc-backlink" href="#id16">3</a>)</span>
+<p><a class="reference external" href="https://bilginc.com/en/blog/communicating-with-data-visualization-5948/">https://bilginc.com/en/blog/communicating-with-data-visualization-5948/</a></p>
+</aside>
+<aside class="footnote brackets" id="id119" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">10</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://bmjopen.bmj.com/lookup/doi/10.1136/bmjopen-2025-101006">https://bmjopen.bmj.com/lookup/doi/10.1136/bmjopen-2025-101006</a></p>
+</aside>
+<aside class="footnote brackets" id="id120" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">11</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=tb2AGDHqdu0">https://www.youtube.com/watch?v=tb2AGDHqdu0</a></p>
+</aside>
+<aside class="footnote brackets" id="id121" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">12</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://journals.lww.com/10.4103/ijcm.ijcm_601_23">https://journals.lww.com/10.4103/ijcm.ijcm_601_23</a></p>
+</aside>
+<aside class="footnote brackets" id="id122" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">13</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="http://arxiv.org/pdf/2205.12958.pdf">http://arxiv.org/pdf/2205.12958.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id123" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id40">14</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.human-biology-and-public-health.org/index.php/hbph/article/view/113">https://www.human-biology-and-public-health.org/index.php/hbph/article/view/113</a></p>
+</aside>
+<aside class="footnote brackets" id="id124" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id41">15</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/jclp.23570">https://onlinelibrary.wiley.com/doi/10.1002/jclp.23570</a></p>
+</aside>
+<aside class="footnote brackets" id="id125" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id42">16</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://journals.gre.ac.uk/index.php/msor/article/view/1429">https://journals.gre.ac.uk/index.php/msor/article/view/1429</a></p>
+</aside>
+<aside class="footnote brackets" id="id126" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id43">17</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-024-02235-0">https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-024-02235-0</a></p>
+</aside>
+<aside class="footnote brackets" id="id127" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id44">18</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/ijop.13271">https://onlinelibrary.wiley.com/doi/10.1002/ijop.13271</a></p>
+</aside>
+<aside class="footnote brackets" id="id128" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id45">19</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://linkinghub.elsevier.com/retrieve/pii/S0003267021011685">https://linkinghub.elsevier.com/retrieve/pii/S0003267021011685</a></p>
+</aside>
+<aside class="footnote brackets" id="id129" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id46">20</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.semanticscholar.org/paper/bde00e3edf31712746b2d2a3b863e3c3b0f4fc46">https://www.semanticscholar.org/paper/bde00e3edf31712746b2d2a3b863e3c3b0f4fc46</a></p>
+</aside>
+<aside class="footnote brackets" id="id130" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id47">21</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="http://www.jbe-platform.com/content/journals/10.1075/lab.24027.ver">http://www.jbe-platform.com/content/journals/10.1075/lab.24027.ver</a></p>
+</aside>
+<aside class="footnote brackets" id="id131" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id48">22</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/abs/2403.11782">https://arxiv.org/abs/2403.11782</a></p>
+</aside>
+<aside class="footnote brackets" id="id132" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id49">23</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/abs/1009.1003">https://arxiv.org/abs/1009.1003</a></p>
+</aside>
+<aside class="footnote brackets" id="id133" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id50">24</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/html/2410.00365">https://arxiv.org/html/2410.00365</a></p>
+</aside>
+<aside class="footnote brackets" id="id134" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id51">25</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/pdf/1207.6002.pdf">https://arxiv.org/pdf/1207.6002.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id135" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id52">26</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/pdf/1808.10173.pdf">https://arxiv.org/pdf/1808.10173.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id136" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id53">27</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/abs/1209.5999">https://arxiv.org/abs/1209.5999</a></p>
+</aside>
+<aside class="footnote brackets" id="id137" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id54">28</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/pdf/1612.06661.pdf">https://arxiv.org/pdf/1612.06661.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id138" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id55">29</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="http://arxiv.org/pdf/2405.17492.pdf">http://arxiv.org/pdf/2405.17492.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id139" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id56">30</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://joss.theoj.org/papers/10.21105/joss.03167.pdf">https://joss.theoj.org/papers/10.21105/joss.03167.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id140" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id57">31</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://openintrostat.github.io/ims-tutorials/">https://openintrostat.github.io/ims-tutorials/</a></p>
+</aside>
+<aside class="footnote brackets" id="id141" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id58">32</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pypi.org/c2.sitemap.xml">https://pypi.org/c2.sitemap.xml</a></p>
+</aside>
+<aside class="footnote brackets" id="id142" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id59">33</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/storopoli/Estatistica">storopoli/Estatistica</a></p>
+</aside>
+<aside class="footnote brackets" id="id143" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id60">34</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/pinamont/statistics-tutorial">pinamont/statistics-tutorial</a></p>
+</aside>
+<aside class="footnote brackets" id="id144" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id61">35</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/tpetzoldt/elements">tpetzoldt/elements</a></p>
+</aside>
+<aside class="footnote brackets" id="id145" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id62">36</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://aurelio.net/moneylog/cloud/">https://aurelio.net/moneylog/cloud/</a></p>
+</aside>
+<aside class="footnote brackets" id="id146" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id63">37</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12364903/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12364903/</a></p>
+</aside>
+<aside class="footnote brackets" id="id147" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id64">38</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pt.linkedin.com/in/tainamedeiros/en">https://pt.linkedin.com/in/tainamedeiros/en</a></p>
+</aside>
+<aside class="footnote brackets" id="id148" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id65">39</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.facebook.com/groups/python.brasil/posts/1139355082836027/">https://www.facebook.com/groups/python.brasil/posts/1139355082836027/</a></p>
+</aside>
+<aside class="footnote brackets" id="id149" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id66">40</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://seantrott.github.io/stats/">https://seantrott.github.io/stats/</a></p>
+</aside>
+<aside class="footnote brackets" id="id150" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id67">41</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pubs.aip.org/jasa/article/156/4_Supplement/A78/3331372/Tutorial-on-machine-learning-for-acoustics">https://pubs.aip.org/jasa/article/156/4_Supplement/A78/3331372/Tutorial-on-machine-learning-for-acoustics</a></p>
+</aside>
+<aside class="footnote brackets" id="id151" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id68">42</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/imt2.70002">https://onlinelibrary.wiley.com/doi/10.1002/imt2.70002</a></p>
+</aside>
+<aside class="footnote brackets" id="id152" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id69">43</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.mdpi.com/2673-7426/5/2/27">https://www.mdpi.com/2673-7426/5/2/27</a></p>
+</aside>
+<aside class="footnote brackets" id="id153" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id70">44</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="http://biorxiv.org/lookup/doi/10.1101/2023.07.20.549945">http://biorxiv.org/lookup/doi/10.1101/2023.07.20.549945</a></p>
+</aside>
+<aside class="footnote brackets" id="id154" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id71">45</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.tandfonline.com/doi/full/10.1080/10705511.2021.1989306">https://www.tandfonline.com/doi/full/10.1080/10705511.2021.1989306</a></p>
+</aside>
+<aside class="footnote brackets" id="id155" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id72">46</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/abs/2501.08288">https://arxiv.org/abs/2501.08288</a></p>
+</aside>
+<aside class="footnote brackets" id="id156" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id73">47</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.semanticscholar.org/paper/3347bf97d7dfe2e4a28e509ff310a4d97735e5cb">https://www.semanticscholar.org/paper/3347bf97d7dfe2e4a28e509ff310a4d97735e5cb</a></p>
+</aside>
+<aside class="footnote brackets" id="id157" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id74">48</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.semanticscholar.org/paper/b6d66d7cb39fce60e396c89574303d6f970ebb20">https://www.semanticscholar.org/paper/b6d66d7cb39fce60e396c89574303d6f970ebb20</a></p>
+</aside>
+<aside class="footnote brackets" id="id158" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id75">49</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.epj-conferences.org/10.1051/epjconf/202429508007">https://www.epj-conferences.org/10.1051/epjconf/202429508007</a></p>
+</aside>
+<aside class="footnote brackets" id="id159" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id76">50</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://academic.oup.com/nargab/article/doi/10.1093/nargab/lqad065/7219410">https://academic.oup.com/nargab/article/doi/10.1093/nargab/lqad065/7219410</a></p>
+</aside>
+<aside class="footnote brackets" id="id160" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id77">51</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/sim.9234">https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/sim.9234</a></p>
+</aside>
+<aside class="footnote brackets" id="id161" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id78">52</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="http://arxiv.org/pdf/2309.03967.pdf">http://arxiv.org/pdf/2309.03967.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id162" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id79">53</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/pdf/2408.14701.pdf">https://arxiv.org/pdf/2408.14701.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id163" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id80">54</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.theoj.org/joss-papers/joss.00045/10.21105.joss.00045.pdf">https://www.theoj.org/joss-papers/joss.00045/10.21105.joss.00045.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id164" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id81">55</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10014045/">https://pmc.ncbi.nlm.nih.gov/articles/PMC10014045/</a></p>
+</aside>
+<aside class="footnote brackets" id="id165" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id82">56</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/pdf/2308.09060.pdf">https://arxiv.org/pdf/2308.09060.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id166" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id83">57</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/">https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/</a></p>
+</aside>
+<aside class="footnote brackets" id="id167" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id84">58</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/mdozmorov/Statistics_notes">mdozmorov/Statistics_notes</a></p>
+</aside>
+<aside class="footnote brackets" id="id168" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id85">59</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.datacamp.com/blog/learn-statistics">https://www.datacamp.com/blog/learn-statistics</a></p>
+</aside>
+<aside class="footnote brackets" id="id169" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id86">60</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://gist.github.com/berlotto">https://gist.github.com/berlotto</a></p>
+</aside>
+<aside class="footnote brackets" id="id170" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id87">61</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=XZo4xyJXCak">https://www.youtube.com/watch?v=XZo4xyJXCak</a></p>
+</aside>
+<aside class="footnote brackets" id="id171" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id88">62</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://international.unicatt.it/ucscinternational-HM_Statistics%20and%20big%20data.pdf">https://international.unicatt.it/ucscinternational-HM_Statistics and big data.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id172" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id89">63</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/WohimLee/Probability-Statistics-Tutorial">WohimLee/Probability-Statistics-Tutorial</a></p>
+</aside>
+<aside class="footnote brackets" id="id173" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id90">64</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=K9teElePNkk">https://www.youtube.com/watch?v=K9teElePNkk</a></p>
+</aside>
+<aside class="footnote brackets" id="id174" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id91">65</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/TUDelft-CITG/learn-probability">TUDelft-CITG/learn-probability</a></p>
+</aside>
+<aside class="footnote brackets" id="id175" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id92">66</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.w3schools.com/statistics/">https://www.w3schools.com/statistics/</a></p>
+</aside>
+<aside class="footnote brackets" id="id176" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id93">67</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/topics/statistics-course?l=tex">topics/statistics-course</a></p>
+</aside>
+<aside class="footnote brackets" id="id177" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id94">68</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Introductory_Statistics_(Shafer_and_Zhang)/01:_Introduction_to_Statistics">https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Introductory_Statistics_(Shafer_and_Zhang)/01:_Introduction_to_Statistics</a></p>
+</aside>
+<aside class="footnote brackets" id="id178" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id95">69</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://dev.to/github/github-co-pilot-pair-programming-com-inteligencia-artificial-1m43">https://dev.to/github/github-co-pilot-pair-programming-com-inteligencia-artificial-1m43</a></p>
+</aside>
+<aside class="footnote brackets" id="id179" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id96">70</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="http://arxiv.org/pdf/2311.03992.pdf">http://arxiv.org/pdf/2311.03992.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id180" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id97">71</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/pdf/1810.08132.pdf">https://arxiv.org/pdf/1810.08132.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id181" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id98">72</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3065362/">https://pmc.ncbi.nlm.nih.gov/articles/PMC3065362/</a></p>
+</aside>
+<aside class="footnote brackets" id="id182" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id99">73</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/qubd/probability_notes">qubd/probability_notes</a></p>
+</aside>
+<aside class="footnote brackets" id="id183" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id100">74</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://courses.lumenlearning.com/introstats1/table-of-contents/">https://courses.lumenlearning.com/introstats1/table-of-contents/</a></p>
+</aside>
+<aside class="footnote brackets" id="id184" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id101">75</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://skyfox.co/wp-content/uploads/2020/08/A-comprehensive-guide-to-business-statistics.pdf">https://skyfox.co/wp-content/uploads/2020/08/A-comprehensive-guide-to-business-statistics.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id185" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id102">76</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://saylordotorg.github.io/text_introductory-statistics/">https://saylordotorg.github.io/text_introductory-statistics/</a></p>
+</aside>
+<aside class="footnote brackets" id="id186" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id103">77</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://books.google.com/books/about/Topics_in_Biostatistics.html?id=AfnJdwoZ2DEC">https://books.google.com/books/about/Topics_in_Biostatistics.html?id=AfnJdwoZ2DEC</a></p>
+</aside>
+<aside class="footnote brackets" id="id187" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id104">78</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/DataForScience/Probability-And-Statistics">DataForScience/Probability-And-Statistics</a></p>
+</aside>
+<aside class="footnote brackets" id="id188" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id105">79</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.getprog.ai/profile/5214">https://www.getprog.ai/profile/5214</a></p>
+</aside>
+<aside class="footnote brackets" id="id189" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id106">80</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://stats.libretexts.org/Workbench/PSYC_2200:_Elementary_Statistics_for_Behavioral_and_Social_Science_(Oja)_WITHOUT_UNITS/00:_Front_Matter/03:_Table_of_Contents">https://stats.libretexts.org/Workbench/PSYC_2200:_Elementary_Statistics_for_Behavioral_and_Social_Science_(Oja)_WITHOUT_UNITS/00:_Front_Matter/03:_Table_of_Contents</a></p>
+</aside>
+<aside class="footnote brackets" id="id190" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id107">81</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/israelarevalo/R-simple-statistics-tutorials">israelarevalo/R-simple-statistics-tutorials</a></p>
+</aside>
+<aside class="footnote brackets" id="id191" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id108">82</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/jimbrig/jimsghstars">jimbrig/jimsghstars</a></p>
+</aside>
+<aside class="footnote brackets" id="id192" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id109">83</a><span class="fn-bracket">]</span></span>
+<p><a class="github reference external" href="https://github.com/topics/statistical-analysis">topics/statistical-analysis</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entendi, muito boa análise, só que não é um curso, é um material de estudo meu mesmo, que quero deixar o mais completo possível para consulta no dia-a-dia do meu mestrado, doutorado e trabalho.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-critica-e-recomendacoes-de-melhoria-de-conteudo-para-material-de-estatistica-aplicada">Análise Crítica e Recomendações de Melhoria de Conteúdo para Material de Estatística Aplicada</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nota-metodologica">Nota Metodológica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estatistica-descritiva">1. ESTATÍSTICA DESCRITIVA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#situacao-atual-tipica">Situação Atual (Típica)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendacoes-de-melhoria">Recomendações de Melhoria</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacao-e-exploracao-de-dados">2. VISUALIZAÇÃO E EXPLORAÇÃO DE DADOS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#situacao-atual">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendacoes">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidade-e-distribuicoes">3. PROBABILIDADE E DISTRIBUIÇÕES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inferencia-estatistica-intervalo-de-confianca">4. INFERÊNCIA ESTATÍSTICA: INTERVALO DE CONFIANÇA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testes-de-hipotese-reframing-critico">5. TESTES DE HIPÓTESE: REFRAMING CRÍTICO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#situacao-atual-problema-major">Situação Atual (Problema Majör)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendacoes-estruturantes">Recomendações Estruturantes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacao-de-grupos">6. COMPARAÇÃO DE GRUPOS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressao-linear">7. REGRESSÃO LINEAR</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduzir-effect-size-e-significancia-pratica">8. INTRODUZIR: EFFECT SIZE E SIGNIFICÂNCIA PRÁTICA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#novo-topico-analise-causal-essencial-para-dados-observacionais">9. NOVO TÓPICO: ANÁLISE CAUSAL (ESSENCIAL PARA DADOS OBSERVACIONAIS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#novo-topico-bayesian-statistics-crescentemente-padrao">10. NOVO TÓPICO: BAYESIAN STATISTICS (CRESCENTEMENTE PADRÃO)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#novo-topico-metodos-nao-parametricos">11. NOVO TÓPICO: MÉTODOS NÃO-PARAMÉTRICOS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reprodutibilidade-e-boas-praticas">12. REPRODUTIBILIDADE E BOAS PRÁTICAS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#novo-topico-etica-em-analise-de-dados">13. NOVO TÓPICO: ÉTICA EM ANÁLISE DE DADOS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">Situação Atual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracao-tecnica">14. INTEGRAÇÃO TÉCNICA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id39">Recomendações</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-geral-recomendada">15. ESTRUTURA GERAL RECOMENDADA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumo-executivo-de-melhorias">Resumo Executivo de Melhorias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sérgio Berlotto
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

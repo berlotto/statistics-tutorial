@@ -52,14 +52,47 @@ O valor mais frequente.
 
 ---
 
-## 5. Prática em Python: A Sensibilidade aos Outliers
+## 5. Assimetria (Skewness) e Curtose (Kurtosis)
+
+Além de saber onde está o centro, precisamos saber a *forma* da distribuição.
+
+### 5.1 Assimetria (Skewness)
+Mede a falta de simetria dos dados.
+*   **Simétrica (Skew $\approx$ 0):** Média $\approx$ Mediana. (Ex: Altura, QI).
+*   **Assimétrica à Direita / Positiva (Skew > 0):** Cauda longa à direita. Média > Mediana. (Ex: Renda, Aluguéis, Acidentes). A maioria dos dados é "baixa", mas os ricos puxam a média.
+*   **Assimétrica à Esquerda / Negativa (Skew < 0):** Cauda longa à esquerda. Média < Mediana. (Ex: Idade de óbito em países desenvolvidos, Notas em prova muito fácil).
+
+### 5.2 Curtose (Kurtosis)
+Mede o "peso das caudas" (frequentemente confundido com "achatamento").
+*   **Mesocúrtica (Kurt $\approx$ 3 ou Excess $\approx$ 0):** Similar à Normal.
+*   **Leptocúrtica (Kurt > 3):** Caudas pesadas. **Importante em Risco:** Indica que eventos extremos (Cisnes Negros) são mais prováveis do que numa curva normal. (Ex: Retornos financeiros em crise).
+*   **Platicúrtica (Kurt < 3):** Caudas leves. Menos outliers extremos. (Ex: Distribuição Uniforme).
+
+## 6. Prática em Python: A Sensibilidade aos Outliers e Forma
 
 ```python
 import pandas as pd
 import numpy as np
-from scipy.stats import gmean
+from scipy.stats import gmean, skew, kurtosis
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-# Cenário: Salários em uma Startup
+# --- Cenário Comparativo: Mesma Média, Realidades Diferentes ---
+# Dataset A: Simétrico (Normal)
+data_a = np.random.normal(loc=100, scale=20, size=1000)
+
+# Dataset B: Assimétrico (Log-normal - comum em salários/preços)
+# Ajustado para ter média próxima de 100 também
+data_b = np.random.lognormal(mean=4.1, sigma=1.0, size=1000) 
+
+print(f"Média A: {np.mean(data_a):.2f} | Mediana A: {np.median(data_a):.2f}")
+print(f"Média B: {np.mean(data_b):.2f} | Mediana B: {np.median(data_b):.2f}")
+
+# Cálculo de Forma
+print(f"\nAssimetria A: {skew(data_a):.2f} (Próximo de 0)")
+print(f"Assimetria B: {skew(data_b):.2f} (Positiva forte)")
+
+# Exemplo Clássico: Salários na Startup
 # 19 Desenvolvedores e 1 Fundador
 salarios = np.array([5000] * 19 + [150000])
 

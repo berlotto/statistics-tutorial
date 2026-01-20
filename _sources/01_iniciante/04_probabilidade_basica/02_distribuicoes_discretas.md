@@ -20,6 +20,17 @@ kernelspec:
 
 ---
 
+## Tabela de Decisão: Qual Distribuição Usar?
+
+| Distribuição | Cenário Típico | Pergunta Chave | Parâmetros |
+| :--- | :--- | :--- | :--- |
+| **Bernoulli** | Evento único (Sim/Não) | "O usuário clicou no botão?" | $p$ (probabilidade sucesso) |
+| **Binomial** | $n$ tentativas, quantas sucessos? | "Em 1000 visitas, quantas vendas?" | $n$ (tentativas), $p$ (taxa conv.) |
+| **Poisson** | Contagem em tempo/espaço fixo | "Quantos clientes entram por hora?" | $\lambda$ (taxa média) |
+| **Geometrica** | Tentativas até 1º sucesso | "Quantos emails até alguém abrir?" | $p$ (probabilidade sucesso) |
+
+---
+
 ## 1. Distribuição de Bernoulli
 O bloco fundamental. Um único experimento com dois resultados possíveis:
 *   Sucesso ($1$, com probabilidade $p$).

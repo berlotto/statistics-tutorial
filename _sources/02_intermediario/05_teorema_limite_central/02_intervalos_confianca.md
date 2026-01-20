@@ -33,7 +33,69 @@ Se você calcular um IC de 95% = [48, 52], o que isso significa?
 
 ---
 
-## 2. Tipos de IC
+### 1.2 A Visualização "Matrix": 100 Intervalos
+Para entender realmente, precisamos ver a Matrix.
+Imagine que sabemos a média real ($\mu=100$). Vamos rodar 100 experimentos.
+*   Cada linha horizontal é o IC de um experimento.
+*   A linha vertical preta é a verdade ($\mu$).
+*   Se o IC toca na linha preta, ele "acertou" (Verde). Se não, "errou" (Vermelho).
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# População Verdadeira
+mu_real = 100
+sigma_real = 15
+n_samples = 100 # Número de experimentos
+n_obs = 30      # Tamanho de cada amostra
+
+plt.figure(figsize=(10, 8))
+
+contador_acertos = 0
+
+for i in range(n_samples):
+    # Gera amostra
+    amostra = np.random.normal(mu_real, sigma_real, n_obs)
+    
+    # Calcula IC (usando Z score 1.96 simplificado)
+    media = np.mean(amostra)
+    erro_padrao = sigma_real / np.sqrt(n_obs)
+    margem_erro = 1.96 * erro_padrao
+    
+    inferior = media - margem_erro
+    superior = media + margem_erro
+    
+    # Verifica se ACERTOU (se a média real está dentro)
+    acertou = inferior <= mu_real <= superior
+    cor = 'green' if acertou else 'red'
+    if acertou: contador_acertos += 1
+        
+    plt.plot([inferior, superior], [i, i], color=cor, alpha=0.7)
+    plt.plot(media, i, 'o', color=cor, markersize=2)
+
+plt.axvline(mu_real, color='black', label='Média Real (Desconhecida)', linewidth=2)
+plt.title(f'Simulação de 100 Intervalos de Confiança (95%)\nAcertos: {contador_acertos}/100')
+plt.xlabel('Valor da Média')
+plt.ylabel('Experimento #')
+plt.show()
+```
+**O que você vê:** Aproximadamente 5 linhas vermelhas. O método falha em 5% das vezes, e não sabemos quando! Isso é a incerteza científica.
+
+---
+
+## 2. Intervalo de Confiança vs. P-valor
+
+| Aspecto | Intervalo de Confiança (IC) | P-Valor |
+| :--- | :--- | :--- |
+| **O que diz?** | "A magnitude do efeito é provavelmente entre X e Y." | "Há evidência de que o efeito não é zero?" |
+| **Precisão** | Mostra a precisão da estimativa (largura do IC). | Não mostra precisão nem tamanho do efeito. |
+| **Decisão** | Se não cortar o zero (ou valor nulo), é significante. | Se $p < 0.05$, é significante. |
+| **Recomendação** | **Prefira sempre.** É mais informativo. | Use como complemento. |
+
+---
+
+## 3. Tipos de IC
 
 ### A. Paramétrico (Normal/T)
 Usa a fórmula clássica. Assume-se que a média segue a distribuição Normal (graças ao TLC).
