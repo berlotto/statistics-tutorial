@@ -41,9 +41,9 @@ Como escrever um relatório ético:
 3.  **Conflito de Interesse:** Você está sendo pago para achar um resultado positivo?
 
 ### Checklist Ético do Analista:
-- [ ] Meus dados contêm informações pessoais (PII)? Elas foram anonimizadas?
-- [ ] O algoritmo afeta vidas humanas (crédito, emprego, saúde)? Se sim, ele é explicável?
-- [ ] Se eu estivesse no lugar do sujeito dos dados, eu concordaria com esse uso?
+- Meus dados contêm informações pessoais (PII)? Elas foram anonimizadas?
+- O algoritmo afeta vidas humanas (crédito, emprego, saúde)? Se sim, ele é explicável?
+- Se eu estivesse no lugar do sujeito dos dados, eu concordaria com esse uso?
 
 ---
 
