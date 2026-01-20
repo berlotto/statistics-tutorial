@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Cálculo Amostral: Quantos Precisamos?
 
 > **"Qual o $N$ ideal? O menor possível que satisfaça seu orçamento e sua necessidade de precisão."**

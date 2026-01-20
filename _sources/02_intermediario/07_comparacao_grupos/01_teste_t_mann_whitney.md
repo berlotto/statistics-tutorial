@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Comparação de 2 Grupos: Teste T e Seus Amigos
 
 > **"A diferença entre o remédio e o veneno é a dose... e o P-valor."**

@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Técnicas de Amostragem e Viés
 
 > **"Comer uma colher de sopa é suficiente para saber se a panela inteira está salgada - desde que você tenha misturado a sopa antes."** — George Gallup

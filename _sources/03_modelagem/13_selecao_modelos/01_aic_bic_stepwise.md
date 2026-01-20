@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Seleção de Modelos: A Navalha de Occam
 
 > **"Entia non sunt multiplicanda praeter necessitatem." (As entidades não devem ser multiplicadas além do necessário).** — William of Ockham

@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Medidas Epidemiológicas: O Idioma da Saúde
 
 > **"Dizer que o risco 'dobrou' assusta. Dizer que aumentou de 0.1% para 0.2% acalma."**

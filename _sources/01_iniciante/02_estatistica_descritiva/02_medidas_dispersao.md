@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Medidas de Dispersão (Variabilidade)
 
 > **"A estatística é a ciência que diz que, se você colocar a cabeça no forno e os pés na geladeira, na média seu corpo está numa temperatura ótima."**

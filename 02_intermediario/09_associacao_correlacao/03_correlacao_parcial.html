@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Comparando 3+ Grupos: ANOVA e Kruskal-Wallis &#8212; Documentação de Estudos Aprofundados: Estatística</title>
+    <title>Correlação Parcial: Controlando Confundidores &#8212; Documentação de Estudos Aprofundados: Estatística</title>
   
   
   
@@ -59,12 +59,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '02_intermediario/07_comparacao_grupos/02_anova_kruskal';</script>
-    <link rel="canonical" href="/statistics-tutorial/02_intermediario/07_comparacao_grupos/02_anova_kruskal.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_intermediario/09_associacao_correlacao/03_correlacao_parcial';</script>
+    <link rel="canonical" href="/statistics-tutorial/02_intermediario/09_associacao_correlacao/03_correlacao_parcial.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Cálculo Amostral: Quantos Precisamos?" href="../08_poder_amostra/01_calculo_amostral.html" />
-    <link rel="prev" title="Comparação de 2 Grupos: Teste T e Seus Amigos" href="01_teste_t_mann_whitney.html" />
+    <link rel="next" title="Regressão Linear Simples: A Arte de Prever" href="../../03_modelagem/10_regressao_linear/01_regressao_simples.html" />
+    <link rel="prev" title="Associação Categórica: Chi-Quadrado e Fisher" href="02_chi_quadrado.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -195,13 +195,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../05_teorema_limite_central/02_intervalos_confianca.html">Intervalos de Confiança (IC): A Margem de Erro Científica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06_validacao_premissas/01_testes_normalidade.html">Validação de Premissas: Normalidade</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06_validacao_premissas/02_homocedasticidade.html">Validação de Premissas: Homocedasticidade</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_teste_t_mann_whitney.html">Comparação de 2 Grupos: Teste T e Seus Amigos</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Comparando 3+ Grupos: ANOVA e Kruskal-Wallis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_comparacao_grupos/01_teste_t_mann_whitney.html">Comparação de 2 Grupos: Teste T e Seus Amigos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_comparacao_grupos/02_anova_kruskal.html">Comparando 3+ Grupos: ANOVA e Kruskal-Wallis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../08_poder_amostra/01_calculo_amostral.html">Cálculo Amostral: Quantos Precisamos?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../08_poder_amostra/02_poder_teste.html">O Poder do Teste (Statistical Power)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09_associacao_correlacao/01_correlacao.html">Correlação: A Medida da Associação</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09_associacao_correlacao/02_chi_quadrado.html">Associação Categórica: Chi-Quadrado e Fisher</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09_associacao_correlacao/03_correlacao_parcial.html">Correlação Parcial: Controlando Confundidores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_correlacao.html">Correlação: A Medida da Associação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_chi_quadrado.html">Associação Categórica: Chi-Quadrado e Fisher</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Correlação Parcial: Controlando Confundidores</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nível 3 - Modelagem</span></p>
 <ul class="nav bd-sidenav">
@@ -296,7 +296,7 @@
       
       
       
-      <li><a href="https://github.com/berlotto/statistics-tutorial/issues/new?title=Issue%20on%20page%20%2F02_intermediario/07_comparacao_grupos/02_anova_kruskal.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/berlotto/statistics-tutorial/issues/new?title=Issue%20on%20page%20%2F02_intermediario/09_associacao_correlacao/03_correlacao_parcial.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -326,7 +326,7 @@
       
       
       
-      <li><a href="../../_sources/02_intermediario/07_comparacao_grupos/02_anova_kruskal.md" target="_blank"
+      <li><a href="../../_sources/02_intermediario/09_associacao_correlacao/03_correlacao_parcial.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -410,7 +410,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Comparando 3+ Grupos: ANOVA e Kruskal-Wallis</h1>
+    <h1>Correlação Parcial: Controlando Confundidores</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -420,14 +420,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anova-one-way-analise-de-variancia">1. ANOVA One-Way (Análise de Variância)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-logica-f-ratio">A Lógica F (Ratio)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testes-post-hoc-o-detective">2. Testes Post-Hoc (O Detective)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kruskal-wallis-a-anova-nao-parametrica">3. Kruskal-Wallis (A ANOVA Não-Paramétrica)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-em-python-qual-marketing-vende-mais">4. Prática em Python: Qual Marketing vende mais?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-perigo-do-p-hacking">O Perigo do “P-Hacking”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-conceito-de-controlar-por">1. O Conceito de “Controlar por”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-intuicao-matematica-metodo-dos-residuos">2. A Intuição Matemática (Método dos Resíduos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-em-python">3. Prática em Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-bibliotecas-prontas-pingouin">Usando Bibliotecas Prontas (<code class="docutils literal notranslate"><span class="pre">pingouin</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quando-usar-correlacao-parcial">Quando usar Correlação Parcial?</a></li>
 </ul>
 </li>
 </ul>
@@ -441,123 +438,138 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="comparando-3-grupos-anova-e-kruskal-wallis">
-<h1>Comparando 3+ Grupos: ANOVA e Kruskal-Wallis<a class="headerlink" href="#comparando-3-grupos-anova-e-kruskal-wallis" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="correlacao-parcial-controlando-confundidores">
+<h1>Correlação Parcial: Controlando Confundidores<a class="headerlink" href="#correlacao-parcial-controlando-confundidores" title="Link to this heading">#</a></h1>
 <blockquote>
-<div><p><strong>“Por que não rodar vários Testes T? Porque você vai cometer o Erro Tipo I.”</strong></p>
-<p>Se você tem 3 grupos (A, B, C) e faz T-Test(A,B), T-Test(B,C) e T-Test(A,C), sua chance de achar um falso positivo sobe de 5% para quase 14%. A ANOVA resolve isso testando tudo de uma vez.</p>
+<div><p><strong>“A correlação entre A e B é real, ou é culpa de C?”</strong></p>
+<p>Muitas vezes, duas variáveis parecem conectadas, mas ambas são apenas sintomas de uma terceira causa comum. A <strong>Correlação Parcial</strong> é a ferramenta estatística que nos permite “limpar” esse ruído e ver a relação pura entre duas variáveis, mantendo a terceira constante.</p>
 </div></blockquote>
 <hr class="docutils" />
-<section id="anova-one-way-analise-de-variancia">
-<h2>1. ANOVA One-Way (Análise de Variância)<a class="headerlink" href="#anova-one-way-analise-de-variancia" title="Link to this heading">#</a></h2>
-<p>Apesar do nome “Variância”, ela serve para comparar <strong>Médias</strong>.</p>
+<section id="o-conceito-de-controlar-por">
+<h2>1. O Conceito de “Controlar por”<a class="headerlink" href="#o-conceito-de-controlar-por" title="Link to this heading">#</a></h2>
+<p>Imagine que você descobre uma correlação forte (<span class="math notranslate nohighlight">\(r=0.8\)</span>) entre <strong>Venda de Sorvetes</strong> (<span class="math notranslate nohighlight">\(X\)</span>) e <strong>Ataques de Tubarão</strong> (<span class="math notranslate nohighlight">\(Y\)</span>).</p>
 <ul class="simple">
-<li><p><strong>Hipótese Nula (<span class="math notranslate nohighlight">\(H_0\)</span>):</strong> Todas as médias são iguais (<span class="math notranslate nohighlight">\(\mu_A = \mu_B = \mu_C\)</span>).</p></li>
-<li><p><strong>Hipótese Alternativa (<span class="math notranslate nohighlight">\(H_1\)</span>):</strong> Pelo menos uma média é diferente das outras. (Não diz qual!).</p></li>
+<li><p>Você proibiria sorvete nas praias? Não.</p></li>
+<li><p>Você sabe que existe um <strong>Confundidor (<span class="math notranslate nohighlight">\(Z\)</span>): Temperatura</strong>.</p>
+<ul>
+<li><p>Calor faz vender sorvete.</p></li>
+<li><p>Calor faz gente entrar no mar (e encontrar tubarões).</p></li>
 </ul>
-<section id="a-logica-f-ratio">
-<h3>A Lógica F (Ratio)<a class="headerlink" href="#a-logica-f-ratio" title="Link to this heading">#</a></h3>
-<p>A ANOVA compara:</p>
+</li>
+</ul>
+<p>A Correlação Parcial (<span class="math notranslate nohighlight">\(r_{xy.z}\)</span>) responde à pergunta:
+<strong>“Se todos os dias tivessem exatamente a mesma temperatura, qual seria a correlação entre sorvete e tubarões?”</strong>
+Provavelmente, seria zero.</p>
+</section>
+<hr class="docutils" />
+<section id="a-intuicao-matematica-metodo-dos-residuos">
+<h2>2. A Intuição Matemática (Método dos Resíduos)<a class="headerlink" href="#a-intuicao-matematica-metodo-dos-residuos" title="Link to this heading">#</a></h2>
+<p>Como o computador “fixa a temperatura” matematicamente sem precisar deletar dados? <strong>Via Resíduos de Regressão.</strong></p>
+<p>O processo mental (e matemático) é:</p>
 <ol class="arabic simple">
-<li><p><strong>Variância ENTRE grupos:</strong> A diferença dos Tratamentos. (Sinal).</p></li>
-<li><p><strong>Variância DENTRO dos grupos:</strong> O ruído aleatório. (Ruído).
-$<span class="math notranslate nohighlight">\( F = \frac{\text{Variância ENTRE}}{\text{Variância DENTRO}} \)</span><span class="math notranslate nohighlight">\(
-Se \)</span>F$ for grande, o Tratamento supera o ruído.</p></li>
+<li><p><strong>Limpar X:</strong> Tentamos prever Sorvete (<span class="math notranslate nohighlight">\(X\)</span>) usando Temperatura (<span class="math notranslate nohighlight">\(Z\)</span>). O que sobra (o <strong>resíduo</strong>) é a variação na venda de sorvete que <em>não tem nada a ver com o calor</em>.</p></li>
+<li><p><strong>Limpar Y:</strong> Tentamos prever Ataques (<span class="math notranslate nohighlight">\(Y\)</span>) usando Temperatura (<span class="math notranslate nohighlight">\(Z\)</span>). O resíduo é a variação nos ataques que <em>independe do calor</em>.</p></li>
+<li><p><strong>Correlacionar as Sobras:</strong> Calculamos a correlação de Pearson entre o Resíduo de X e o Resíduo de Y.</p></li>
 </ol>
-</section>
-</section>
-<hr class="docutils" />
-<section id="testes-post-hoc-o-detective">
-<h2>2. Testes Post-Hoc (O Detective)<a class="headerlink" href="#testes-post-hoc-o-detective" title="Link to this heading">#</a></h2>
-<p>Se a ANOVA deu <span class="math notranslate nohighlight">\(p &lt; 0.05\)</span>, você sabe que <em>alguém</em> é diferente. Mas quem?
-Para descobrir, usamos testes Post-Hoc que ajustam o P-valor para evitar falsos positivos (Correção de Bonferroni ou Tukey).</p>
-<ul class="simple">
-<li><p><strong>Tukey HSD:</strong> O melhor para todos-contra-todos se tiver homocedasticidade.</p></li>
-<li><p><strong>Games-Howell:</strong> Se <strong>não</strong> tiver variâncias iguais.</p></li>
-</ul>
+<p>Se essa nova correlação for zero, a associação original era espúria. Se ainda for alta, então existe uma conexão direta real.</p>
 </section>
 <hr class="docutils" />
-<section id="kruskal-wallis-a-anova-nao-parametrica">
-<h2>3. Kruskal-Wallis (A ANOVA Não-Paramétrica)<a class="headerlink" href="#kruskal-wallis-a-anova-nao-parametrica" title="Link to this heading">#</a></h2>
-<p>O primo do Mann-Whitney para 3+ grupos.</p>
-<ul class="simple">
-<li><p><strong>Quando usar:</strong> Dados não-normais ou ordinais (scores).</p></li>
-<li><p><strong>Post-Hoc:</strong> Teste de Dunn com correção de Bonferroni.</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="pratica-em-python-qual-marketing-vende-mais">
-<h2>4. Prática em Python: Qual Marketing vende mais?<a class="headerlink" href="#pratica-em-python-qual-marketing-vende-mais" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<section id="pratica-em-python">
+<h2>3. Prática em Python<a class="headerlink" href="#pratica-em-python" title="Link to this heading">#</a></h2>
+<p>Vamos simular esse cenário e resolvê-lo de duas formas:</p>
+<ol class="arabic simple">
+<li><p><strong>Método Manual (Hard way):</strong> Para entender o que está acontecendo “debaixo do capô”.</p></li>
+<li><p><strong>Método Pingouin (Easy way):</strong> Como fazemos na vida real.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.multicomp</span><span class="w"> </span><span class="kn">import</span> <span class="n">pairwise_tukeyhsd</span>
 
+<span class="c1"># Configuração visual</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 
-<span class="c1"># Cenário: Vendas diárias em 3 estratégias de Marketing</span>
-<span class="c1"># A: Controle (Não mudou)</span>
-<span class="c1"># B: Influencers (Eficiente)</span>
-<span class="c1"># C: TV (Muito Eficiente)</span>
+<span class="c1"># --- 1. Gerando Dados (Cenário de Confundidor) ---</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="c1"># Z: Temperatura (Causa Comum)</span>
+<span class="n">temperatura</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 
-<span class="n">vendas_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-<span class="n">vendas_B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">115</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span> <span class="c1"># +15</span>
-<span class="n">vendas_C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">130</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span> <span class="c1"># +30</span>
+<span class="c1"># X: Sorvetes (Explicado pela temperatura + ruído aleatório)</span>
+<span class="c1"># Dependência forte de Z</span>
+<span class="n">sorvetes</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">temperatura</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 
-<span class="c1"># Criando DataFrame longo (Tidy format)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;vendas&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">vendas_A</span><span class="p">,</span> <span class="n">vendas_B</span><span class="p">,</span> <span class="n">vendas_C</span><span class="p">]),</span>
-    <span class="s1">&#39;grupo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">30</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">30</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">30</span>
-<span class="p">})</span>
+<span class="c1"># Y: Tubarões (Explicado pela temperatura + ruído aleatório)</span>
+<span class="c1"># Dependência forte de Z, mas NENHUMA ligação direta com X</span>
+<span class="n">tubaroes</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">temperatura</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 
-<span class="c1"># 1. Visualização</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;grupo&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;vendas&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Vendas por Estratégia&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;temp&#39;</span><span class="p">:</span> <span class="n">temperatura</span><span class="p">,</span> <span class="s1">&#39;sorvete&#39;</span><span class="p">:</span> <span class="n">sorvetes</span><span class="p">,</span> <span class="s1">&#39;tubarao&#39;</span><span class="p">:</span> <span class="n">tubaroes</span><span class="p">})</span>
+
+<span class="c1"># --- 2. Correlação Simples (Ingênua) ---</span>
+<span class="n">r_simples</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sorvete&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tubarao&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Correlação Simples (Sorvete vs Tubarão): </span><span class="si">{</span><span class="n">r_simples</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Resultado esperado: ~0.8 (Alto! Parece que sorvete atrai tubarão)</span>
+
+
+<span class="c1"># --- 3. Correlação Parcial (Método Manual: Resíduos) ---</span>
+<span class="c1"># Passo A: Regredir Sorvete ~ Temp e pegar resíduos</span>
+<span class="n">res_sorvete</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;sorvete ~ temp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span><span class="o">.</span><span class="n">resid</span>
+
+<span class="c1"># Passo B: Regredir Tubarão ~ Temp e pegar resíduos</span>
+<span class="n">res_tubarao</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;tubarao ~ temp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span><span class="o">.</span><span class="n">resid</span>
+
+<span class="c1"># Passo C: Correlacionar os resíduos</span>
+<span class="n">r_parcial</span><span class="p">,</span> <span class="n">p_valor</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">res_sorvete</span><span class="p">,</span> <span class="n">res_tubarao</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Correlação Parcial (Controlando Temp):   </span><span class="si">{</span><span class="n">r_parcial</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Resultado esperado: ~0.0 (A verdade aparece!)</span>
+
+
+<span class="c1"># --- Visualização do &quot;Milagre&quot; ---</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Gráfico 1: A Ilusão</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;sorvete&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;tubarao&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;salmon&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Antes: Correlação Espúria (r=</span><span class="si">{</span><span class="n">r_simples</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Ataques de Tubarão&#39;</span><span class="p">)</span>
+
+<span class="c1"># Gráfico 2: A Realidade (Resíduos)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">res_sorvete</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">res_tubarao</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;teal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Depois: Controlando Temperatura (r=</span><span class="si">{</span><span class="n">r_parcial</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Resíduos de Sorvete (Variação s/ Temp)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Resíduos de Tubarão (Variação s/ Temp)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="c1"># plt.show()</span>
-
-<span class="c1"># 2. ANOVA One-Way</span>
-<span class="c1"># Premissa: Normalidade e Homocedasticidade (assumiremos OK aqui)</span>
-<span class="n">f_stat</span><span class="p">,</span> <span class="n">p_anova</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span><span class="n">vendas_A</span><span class="p">,</span> <span class="n">vendas_B</span><span class="p">,</span> <span class="n">vendas_C</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- ANOVA One-Way ---&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;F-statistic: </span><span class="si">{</span><span class="n">f_stat</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P-valor: </span><span class="si">{</span><span class="n">p_anova</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">p_anova</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt; Rejeitamos H0: Existe diferença entre os grupos!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt; Próximo passo: Post-Hoc para saber quem ganha de quem.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt; Não houve diferença significativa.&quot;</span><span class="p">)</span>
-
-<span class="c1"># 3. Post-Hoc de Tukey</span>
-<span class="c1"># Compara par a par (A-B, A-C, B-C) ajustando o p-valor</span>
-<span class="n">tukey</span> <span class="o">=</span> <span class="n">pairwise_tukeyhsd</span><span class="p">(</span><span class="n">endog</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;vendas&#39;</span><span class="p">],</span> <span class="n">groups</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;grupo&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Teste Post-Hoc de Tukey ---&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tukey</span><span class="p">)</span>
-
-<span class="c1"># Interpretação da Tabela Tukey:</span>
-<span class="c1"># reject=True significa que a diferença é real.</span>
-<span class="c1"># Provavelmente A!=B, A!=C e B!=C.</span>
-
-<span class="c1"># 4. Caso Não-Paramétrico: Kruskal-Wallis</span>
-<span class="n">stat_k</span><span class="p">,</span> <span class="n">p_k</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kruskal</span><span class="p">(</span><span class="n">vendas_A</span><span class="p">,</span> <span class="n">vendas_B</span><span class="p">,</span> <span class="n">vendas_C</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Kruskal-Wallis (Se falhasse normalidade) ---&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P-valor: </span><span class="si">{</span><span class="n">p_k</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="o-perigo-do-p-hacking">
-<h3>O Perigo do “P-Hacking”<a class="headerlink" href="#o-perigo-do-p-hacking" title="Link to this heading">#</a></h3>
-<p>Nunca rode ANOVA e depois Kruskal e escolha o que deu p-valor menor. Isso é fraude científica.
-O algoritmo deve ser:</p>
-<ol class="arabic simple">
-<li><p>Testar Premissas.</p></li>
-<li><p>Escolher o teste <strong>antes</strong> de ver o resultado.</p></li>
-<li><p>Reportar.</p></li>
-</ol>
+<section id="usando-bibliotecas-prontas-pingouin">
+<h3>Usando Bibliotecas Prontas (<code class="docutils literal notranslate"><span class="pre">pingouin</span></code>)<a class="headerlink" href="#usando-bibliotecas-prontas-pingouin" title="Link to this heading">#</a></h3>
+<p>Na prática profissional, não calculamos resíduos na mão. Usamos a biblioteca <code class="docutils literal notranslate"><span class="pre">pingouin</span></code>, que é excelente para estatística t-test, ANOVA e correlações robustas.</p>
+<blockquote>
+<div><p><strong>Instalação:</strong> <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pingouin</span></code></p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pingouin</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pg</span>
+
+<span class="c1"># Uma linha de código para resolver tudo</span>
+<span class="n">stats_parcial</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">partial_corr</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;sorvete&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;tubarao&#39;</span><span class="p">,</span> <span class="n">covar</span><span class="o">=</span><span class="s1">&#39;temp&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Resultado com Pingouin ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stats_parcial</span><span class="p">)</span>
+<span class="c1"># O output mostrará o &#39;r&#39; (correlação) corrigido e o p-valor</span>
+</pre></div>
+</div>
+</section>
+<section id="quando-usar-correlacao-parcial">
+<h3>Quando usar Correlação Parcial?<a class="headerlink" href="#quando-usar-correlacao-parcial" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Controle de Qualidade:</strong> Verificar se a correlação entre “Tempo de Fábrica” e “Defeitos” persiste se controlarmos pela “Qualidade da Matéria Prima”.</p></li>
+<li><p><strong>Psicometria:</strong> Entender se “Inteligência” correlaciona com “Renda” se controlarmos pela “Educação dos Pais”.</p></li>
+<li><p><strong>Saúde:</strong> Saber se “Café” causa “Câncer” controlando pelo “Cigarro” (spoiler: a correlação costuma sumir, pois fumantes bebem mais café).</p></li>
+</ul>
 </section>
 </section>
 </section>
@@ -575,7 +587,7 @@ O algoritmo deve ser:</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./02_intermediario/07_comparacao_grupos"
+            path: "./02_intermediario/09_associacao_correlacao"
         },
         predefinedOutput: true
     }
@@ -593,20 +605,20 @@ O algoritmo deve ser:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="01_teste_t_mann_whitney.html"
+       href="02_chi_quadrado.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Comparação de 2 Grupos: Teste T e Seus Amigos</p>
+        <p class="prev-next-title">Associação Categórica: Chi-Quadrado e Fisher</p>
       </div>
     </a>
     <a class="right-next"
-       href="../08_poder_amostra/01_calculo_amostral.html"
+       href="../../03_modelagem/10_regressao_linear/01_regressao_simples.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cálculo Amostral: Quantos Precisamos?</p>
+        <p class="prev-next-title">Regressão Linear Simples: A Arte de Prever</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -626,14 +638,11 @@ O algoritmo deve ser:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anova-one-way-analise-de-variancia">1. ANOVA One-Way (Análise de Variância)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-logica-f-ratio">A Lógica F (Ratio)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testes-post-hoc-o-detective">2. Testes Post-Hoc (O Detective)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kruskal-wallis-a-anova-nao-parametrica">3. Kruskal-Wallis (A ANOVA Não-Paramétrica)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-em-python-qual-marketing-vende-mais">4. Prática em Python: Qual Marketing vende mais?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-perigo-do-p-hacking">O Perigo do “P-Hacking”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-conceito-de-controlar-por">1. O Conceito de “Controlar por”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-intuicao-matematica-metodo-dos-residuos">2. A Intuição Matemática (Método dos Resíduos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-em-python">3. Prática em Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-bibliotecas-prontas-pingouin">Usando Bibliotecas Prontas (<code class="docutils literal notranslate"><span class="pre">pingouin</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quando-usar-correlacao-parcial">Quando usar Correlação Parcial?</a></li>
 </ul>
 </li>
 </ul>
